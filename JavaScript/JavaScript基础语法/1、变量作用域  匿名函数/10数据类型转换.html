@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+    <script type="text/javascript">
+        //1、把字符串转为数字类型parseInt
+        var n = '123fsdfesf';
+        n = parseInt(n);//数字类型123
+        alert(n+1);//NaN：not a number    NaN是一个值，是一个数字类型
+
+        //parseFloat 转换为小数
+
+        //把任意类型转换为数字类型
+        alert( Number('123'));
+        Number(true);
+        Number(null);
+
+        //把任意类型转换为字符串类型：
+        n.toString();
+
+        var n = null;
+        //n.toString();  //将报错，空值不能转
+        alert(String(n));//n='null'
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script>
+        window.onload = function () {
+            document.getElementById('btn1').onclick = function () {
+                //将文本框1的内容写入剪切板
+                //1、获取文本框内容
+                var txt = document.getElementById('txt1').value;
+                //2、将其写入剪切板
+                clipboardData.setData('text', txt);//写入
+                alert('已经将内容成功复制到剪切板');
+            };
+
+            document.getElementById('btn2').onclick = function () {
+                //1、将内容从剪切板取出来
+                var msg = clipboardData.getData('text');//取出
+                //2、设置到文本框中
+                document.getElementById('txt2').value = msg;
+            };
+        };
+
+    </script>
+
+</head>
+<body>
+    <input type="button" name="name" value="复制" id="btn1" />
+    <input type="button" name="name" value="粘贴" id="btn2" />
+    <input type="text" name="name" value="" id="txt1" />
+    <input type="text" name="name" value="" id="txt2" />
+
+
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        /*文档流：将窗体自上而下分成一行行，并在每行中按从左至右的顺序排放元素*/
+        #dv1 {
+            border: 1px solid red;
+            width: 20px;
+            /*不设置position时，默认值为static，文档流*/
+        }
+
+        #dv2 {
+            border: 1px solid blue;
+            width: 30px;
+            /*指定位置绝对（absolute相对于整个大页面），脱离文档流，并给明位置*/
+            position: absolute;
+            left: 300px;
+            top: 500px;
+        }
+
+        #dv3 {
+            border: 1px solid pink;
+            width: 40px;
+            position: relative;
+            /*相对于自身原来的位置，移动坐标*/
+            left: 100px;
+            top: 400px;
+        }
+
+        #dv4 {
+            border: 1px solid green;
+            width: 50px;
+            /*脱离文档流，指定位置绝对(fixed相对于可视区域)，并给明位置*/
+            position: fixed;
+            left: 200px;
+            top: 300px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" name="name" value="" />
+    <input type="button" name="name" value="" />
+    <input type="radio" name="name" value="" />
+    <input type="checkbox" name="name" value="" />
+    <table border="1" cellpadding="2" cellspacing="2">
+        <tr>
+            <td>你好</td>
+            <td>hello</td>
+        </tr>
+    </table>
+    <div id="dv1">
+        div one
+    </div>
+    <div id="dv2">
+        div two
+    </div>
+    <div id="dv3">
+        div three
+
+    </div>
+    <div id="dv4">
+        div four
+
+    </div>
+    <p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p><p>a</p>
+
+</body>
+</html>

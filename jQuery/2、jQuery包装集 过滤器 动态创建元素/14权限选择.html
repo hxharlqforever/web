@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="jQuery/jquery-3.3.1.js"></script>
+    <style>
+        #dv1 {
+            width: 100px;
+            height: 100px;
+            border: 1px solid blue;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            
+            $(':button[value=">>"]').click(function () {
+                $('#s1 option').appendTo('#s2');
+            });
+            $(':button[value=">"]').click(function () {
+                $('#s1 option:selected').appendTo('#s2');
+            });
+            $(':button[value="<<"]').click(function () {
+                $('#s2 option').appendTo('#s1');
+            });
+            $(':button[value="<"]').click(function () {
+                $('#s2 option:selected').appendTo('#s1');
+            });
+           
+        });
+    </script>
+</head>
+<body>
+    <select id="s1" multiple="multiple">
+        <option value="value">增加</option>
+        <option value="value">删除</option>
+        <option value="value">修改</option>
+        <option value="value">查询</option>
+        <option value="value">保存</option>
+    </select>
+    <input type="button" name="name" value=">>" />
+    <input type="button" name="name" value=">" />
+    <input type="button" name="name" value="<" />
+    <input type="button" name="name" value="<<" />
+    <select id="s2" multiple="multiple"></select>
+
+</body>
+</html>

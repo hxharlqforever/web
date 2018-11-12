@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+    <script type="text/javascript">
+      
+        //function btnClick() {
+        //    for (var i = 0; i < 5; i++) {
+        //        alert(i);
+
+        //    }
+        //}
+
+
+
+        //通过动态注册事件的方式实现JS代码与HTML代码相分离 
+        //为窗体注册一个加载事件
+        window.onload = function () {
+            //为按钮注册一个点击事件
+            document.getElementById('btn1').onclick = function () {
+                alert('按钮被单机了');
+            }
+        }
+
+
+
+    </script>
+</head>
+<body>
+
+    <input type="button" name="name" value="button" id="btn1" />
+
+
+
+    <!--<input onclick="alert('Hello World!!');" type="button" name="name" value="button" id="btn1" />-->
+    <!--<input onclick="btnClick()" type="button" name="name" value="button" id="btn1" />-->
+    
+    <script type="text/javascript">
+        //var code = document.getElementById('btn1').onclick.toString();
+        //alert(code);//通过打印可以看到，调用的是btnClick()
+
+    </script>
+</body>
+</html>

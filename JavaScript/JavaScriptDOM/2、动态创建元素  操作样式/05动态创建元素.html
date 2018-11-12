@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        #dv1 {
+            width: 450px;
+            height: 450px;
+            border: 1px solid blue;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        //通过js动态创建的元素，直接右键→查看源代码是看不到的，需要通过开发人员工具才能看到
+
+        //docunment.write()只能在页面加载过程中才能动态创建
+        //可以调用document的createElement()方法来创建具有指定标签的DOM对象，然后通过调用某个元素的appendChild()方法将新创建的元素添加到向一名的元素下
+        //removeChild(子元素对象)删除元素
+
+        window.onload = function () {
+            //为按钮注册单击事件
+            document.getElementById('btn1').onclick = function () {
+                //1、动态注册一个超链接，并显示到div中
+                var aLink = document.createElement('a');
+                aLink.href = 'http://www.baidu.com';
+                aLink.title = '百度一下，你就知道';
+                aLink.target = '_blank';
+                //innerText和TextContext属性的作用：设置一堆标签的开始和结束标签之间的内容
+                //innerHTML  可以向标签中设置标签，兼容所有浏览器，而innerText只能设置文字
+
+                aLink.innerText = '百度';
+
+
+                ////aLink.textContent='百度'    //火狐的写法。不过应该是浏览器升级的原因，现在IE和FF的兼容性比之前好得多，很多视频中不兼容的情况现在已经兼容
+                ////由于innerText与TextContent都是string类型的属性，所以即使某个浏览器确实有该属性，但是有可能由于是空字符串，导致if判断结果返回的还是false，所以这时要用typeof来检测
+                //if (typeof (aLink.innerText) == 'string') {
+                //    aLink.innerText = '百度';
+                //} else if (typeof (aLink.textContent) == 'string') {
+                //    aLink.textContent = '百度';
+                //}
+
+
+                //2、把动态创建的元素添加到网页上
+                //appendChild()表示追加到div内部
+                document.getElementById('dv1').appendChild(aLink);
+
+                //动态添加一个文本框
+                var ob = document.createElement('input');
+                ob.type = 'text';
+                document.getElementById('dv1').insertBefore(ob,document.getElementById('dv1').firstChild);
+
+            };
+
+            //清空层中的所有内容
+            //注册一个单击事件
+            document.getElementById('btn2').onclick = function () {
+                //获取层
+                var dvobj = document.getElementById('dv1');
+
+                ////获取层中的第一个元素
+                //dvobj.firstChild;//如果层中什么都没有那么firstChild就是undefined。如果有任何子元素，那么firstChild获取的就是第一个子元素对象
+                //while (dvobj.firstChild) {
+                //    dvobj.removeChild(dvobj.firstChild);
+                //}
+
+                //上面注释相当于
+                dvobj.innerHTML = '';
+
+            };
+        };
+
+
+    </script>
+
+</head>
+<body>
+    <input type="button" name="name" value="加入" id="btn1" />
+    <div id="dv1">
+        这是层中的默认内容
+        <p>haha</p>
+        <input type="button" name="name" value="加入" id="btn3" />
+    </div>
+
+    <input type="button" name="name" value="清空" id="btn2" />
+
+</body>
+</html>

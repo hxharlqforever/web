@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+        #dv1 {
+            background-color: blue;
+            width: 200px;
+            height:200px;
+        }
+        #p1 {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+        #span1 {
+            background-color: yellow;
+            color:purple;
+        }
+    </style>
+
+    <script>
+
+        //srcElement:获取事件源对象。
+
+
+
+        window.onload = function () {
+
+            //为body注册单击事件
+            document.body.onclick = function () {
+                //alert(this.id);
+
+                alert(window.event.srcElement.id);
+            }
+            //为dv1注册单击事件
+            document.getElementById('dv1').onclick = function () {
+                //alert(this.id);
+
+                alert(window.event.srcElement.id);
+            }
+            //为p元素注册一个单击事件
+            document.getElementById('p1').onclick = function () {
+                //alert(this.id);
+
+                alert(window.event.srcElement.id);
+            }
+
+
+            //为span元素注册一个单击事件
+            document.getElementById('span1').onclick = function () {
+
+                //-------------------兼容的获取最初引发事件对象的写法
+                var e = window.event || evt;
+                //IE
+                //e.srcElement;
+                //FF
+                //e.target;
+
+                //获取住处引发事件对象的ID
+                //var srcTarget = e.srcElement || e.target;
+                //alert(srcTarget.id);
+                //-------------------兼容的获取最初引发事件对象的写法
+
+
+
+
+                //--------------------------兼容的FF的取消事件冒泡的写法
+                //var e = window.event || evt;
+                //e.cancelBubble = true;
+                //--------------------------兼容的FF的取消事件冒泡的写法
+
+
+
+
+                //阻止事件冒泡
+                //window.event.cancelBubble = true; //IE下阻止，只兼容IE
+
+
+                // alert(this.id);
+                //window.event.srcElement始终是表示最初引发事件的对象（事件冒泡依然继续，但是在每隔事件中window.event.srcElement都是表示最扯引发事件的对象。与this不同，this表示的是当前事件的对象）
+
+                //window.event.srcElement这种写法也是只兼容IE
+                //alert(window.event.srcElement.id);
+            }
+        }
+        
+    </script>
+
+</head>
+<body id="body1">
+    <div id="dv1">
+        <p id="p1">
+            <span id="span1">传智播客</span>
+
+        </p>
+
+    </div>
+
+</body>
+</html>

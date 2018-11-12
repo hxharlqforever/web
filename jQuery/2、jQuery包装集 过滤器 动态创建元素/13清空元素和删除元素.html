@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+        #dv1 {
+        width:300px;
+        height:300px;
+        border :1px solid blue;
+        }
+
+    </style>
+    <script src="jQuery/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //清空元素
+            $('#btn1').click(function () {
+                $('#dv1').empty();//清空元素内部，即下面的所有节点
+            });
+            //删除元素
+            $('#btn2').click(function () {
+                $('#dv1').remove();//删除当前元素，返回值为被删除的元素。还可以继续使用被删除的节点
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="empty" id="btn1"/>
+    <input type="button" name="name" value="Remove" id="btn2" />
+
+    <div id="dv1">
+        fasdgfr;kdfjgawkergjreger
+        <p>
+            dkfhsd;jkfhdjvhdfb
+        </p>
+        <ul>
+            <li>dkgvndfkgnfdklgb</li>
+            <li>dkgvndfkgnfdklgb</li>
+            <li>dkgvndfkgnfdklgb</li>
+            <li>dkgvndfkgnfdklgb</li>
+
+        </ul>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+      
+        function f1() {
+            alert('first f1');
+        }
+
+        function f1(name) {
+            alert(name);
+        }
+
+        //因为JS中没有函数重载的概念，所以遇到同名的函数，会用最后一次函数定义覆盖前面的函数定义。
+        //所以下面调用f1()函数，其实调用的是最后一次函数定义，但是最后一次函数定义需要传递一个参数给name变量，却没有传递，所以name变量没有赋值，输出为undefined
+        f1();
+
+        //如果不确定函数中将来要传递的参数的个数，那么可以使用类似于C#中可变参数的方法，在JS中叫arguments对象
+        //add(10,20)
+        //add(10,20,30)
+        //add(10,20,30,40)
+        //其实所有的方法都无需定义形参，定义形参的目的仅仅是为了使用方便
+        //无论是否定义了形参，在实际调用该函数的时候，所有的参数都包含在了参数arguments对象中
+        function add()
+        {
+            var sum = 0;
+            //循环遍历累加每个参数的值
+            for (var i = 0; i < arguments.length; i++) {
+                sum += arguments[i];
+            }
+            return sum;
+        }
+        //var result = add(10, 20, 30);
+        var result = add();//无参数，不循环
+        alert(result);
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

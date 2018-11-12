@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+
+        ////当一个函数注册给不同对象的时候，在调用时，函数使用的this表示的时不同的对象
+        //function f1() {
+        //    alert(this);
+        //}
+        //////因为直接在页面上定义的函数其实就默认注册给了window对象。
+        //////在一个函数内部，this表示的是哪个对象，取决于当前函数是哪个对象的函数
+        ////window.f1();//等同于f1();
+
+
+        //function Person() {
+        //    this.toString = function () {
+        //        return 'Person类型';
+        //    };
+        //}
+        //var p1 = new Person();
+        //p1.toString();
+        //p1.fn = f1;
+        //p1.fn();
+
+
+        //-------------------------------------------------------------------------------------------------
+        var name = 'window中的name';
+
+        function Person(){
+            this.name = 'Person中的name';
+            this.getName = function () {
+                return function () { return this.name; }//这儿的匿名函数并没有指明对象，默认是window，所以次数返回的name就是window中的name
+
+                //var that=this;
+                //return function () { return that.name; }//这样的话返回的是Person中的name
+            };
+        }
+
+        var p = new Person();
+        alert(p.getName()());
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+        #dv1 {
+            width:300px;
+            height:300px;
+            background-color:blue;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            document.getElementById('dv1').onclick = function () {
+                //单击层的时候提交表单
+                //1、手动获取提交表单的按钮，并且调用该按钮的click方法，出发该按钮的单击事件，从而实现表单的提交
+
+                document.getElementById('btns1').click();
+                //2、直接调用表单对象的submit()方法来实现提交
+                document.getElementById('f1').submit();
+            };
+
+            //为表单对象注册一个提交事件
+            document.getElementById('f1').onsubmit = function () {
+                //在表单的提交事件中验证用户是否在玩文本框中输入了内容，如果输入了，则提交该表单，否则停止提交该表单
+                var seart = document.getElementsByName('wd')[0].value;
+                if(seart.length==0){
+                    alert('请输入内容');
+                    return false;
+                }
+            };
+
+
+        };
+
+    </script>
+</head>
+<body>
+    <form action="http://www.baidu.com" method="get" id="f1">
+        <input type="text" value="" name="wd" id="txt1"/>
+        <input type="submit" value="百度一下，你就知道" id="btns1"/>
+        <div id="dv1">
+
+            </div>
+        </form>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="jQuery/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#btn1').click(function () {
+                //先使用选择器选择到对应的元素，然后使用指定的元素对象来替换选择到的元素
+                //$('hr').replaceWith('<a href="http://www.baidu.com">百度</a>');
+
+                $('<font color="red">=========</font>').replaceAll('hr');
+            })
+
+        });
+    </script>
+
+</head>
+<body>
+    <input type="button" name="name" value="button" id="btn1" />
+    <p>
+        11111111111111111111111
+    </p>
+    <hr/>
+    <p>
+        11111111111111111111111
+    </p>
+    <hr />
+
+    <p>
+        11111111111111111111111
+    </p>
+    <p>
+        11111111111111111111111
+    </p>
+    <hr />
+    <p>
+        11111111111111111111111
+    </p>
+
+
+</body>
+</html>

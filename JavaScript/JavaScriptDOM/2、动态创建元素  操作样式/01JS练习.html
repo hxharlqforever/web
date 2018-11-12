@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            
+                //获取所有iuput元素对象
+                var inputs = document.getElementsByTagName('input');
+                //循环遍历，为每一个按钮注册单击事件
+                for (var i = 0; i < inputs.length; i++) {
+                   
+                    if (inputs[i].type == 'button') {//判断是否为按钮
+                        //为按钮注册单击事件
+                        inputs[i].onclick = function () {
+                            //设置所有的button都为‘哈哈’
+                            for (var j = 0; j < inputs.length; j++) {
+                                if (inputs[j].type == 'button') {
+                                    inputs[j].value='haha'
+                                }
+                            }
+                            this.value = '呜呜';
+                        };
+                    }
+                }
+            };
+        
+
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="哈哈"/>
+    <input type="button" name="name" value="哈哈"/>
+    <input type="button" name="name" value="哈哈"/>
+    <input type="button" name="name" value="哈哈"/>
+    <input type="button" name="name" value="哈哈"/>
+    <input/>
+    <input />
+    <input />
+    <input />
+    <input />
+
+
+
+</body>
+</html>

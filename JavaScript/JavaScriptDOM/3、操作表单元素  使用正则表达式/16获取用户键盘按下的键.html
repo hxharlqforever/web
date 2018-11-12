@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('txt1').onkeydown = function (evt) {
+                //获取事件对象
+                var e = window.event || evt;
+                document.getElementById('p1').innerHTML = e.keyCode;//键盘码
+            };
+            //var txts = document.getElementById('dvText').getElementsByTagName('input');
+            //for (var i = 0; i < txts.length; i++) {
+            //    txts[i].onkeydown = function (evt) {
+            //        var e = window.event || evt;
+            //        if (e.keyCode == 13) {
+            //            e.keyCode = 9;
+            //        }
+            //    };
+            //}
+        };
+     
+    </script>
+</head>
+<body>
+    <input type="text" name="name" value="" id="txt1"/>
+    <p id="p1">
+
+    </p>
+    <div id="dvText">
+        </div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        td {
+        width:50px;
+        height:30px;
+        }
+    </style>
+    <script src="jQuery/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            ////表格隔行变色
+            //$('#btn1').click(function () {
+            //    $('#t1 tr:even').css('backgroundColor', 'yellow');
+            //    $('#t1 tr:odd').css('backgroundColor', 'red');
+
+            //});
+
+            ////列表前三行粗体显示
+            //$('#u1 li:lt(3)').css('font-weight','bolder');
+
+
+            //鼠标mouseover事件
+            $('#t1 tr').mouseover(function () {
+                $(this).css('backgroundColor', 'yellow').siblings('tr').css('backgroundColor', 'white');
+            });
+
+
+
+
+        });
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="按钮" id="btn1" />
+
+    <ul id="u1">
+        <li>AAAA</li>
+        <li>AAAA</li>
+        <li>AAAA</li>
+        <li>AAAA</li>
+        <li>AAAA</li>
+
+
+    </ul>
+    <table border="1" id="t1">
+        <tr>
+            <td>姓名</td>
+            <td>成绩</td>
+            <td>姓名</td>
+            <td>成绩</td>
+        </tr>
+
+        <tr>
+            <td>曹操</td>
+            <td>85</td>
+            <td>姓名</td>
+            <td>成绩</td>
+        </tr>
+
+        <tr>
+            <td>吕布</td>
+            <td>90</td>
+            <td>姓名</td>
+            <td>成绩</td>
+        </tr>
+        <tr>
+            <td>赵云</td>
+            <td>95</td>
+            <td>姓名</td>
+            <td>成绩</td>
+        </tr>
+
+        <tr>
+            <td>甄姬</td>
+            <td>98</td>
+            <td>姓名</td>
+            <td>成绩</td>
+        </tr>
+        <tr>
+            <td>小乔</td>
+            <td>75</td>
+            <td>姓名</td>
+            <td>成绩</td>
+        </tr>
+
+        <tr>
+            <td>亚瑟</td>
+            <td>88</td>
+            <td>姓名</td>
+            <td>成绩</td>
+        </tr>
+
+        <tr>
+            <td>花木兰</td>
+            <td>99</td>
+            <td>姓名</td>
+            <td>成绩</td>
+        </tr>
+
+        <tr>
+            <td>韩欣</td>
+            <td>80</td>
+            <td>姓名</td>
+            <td>成绩</td>
+        </tr>
+
+
+    </table>
+
+</body>
+</html>

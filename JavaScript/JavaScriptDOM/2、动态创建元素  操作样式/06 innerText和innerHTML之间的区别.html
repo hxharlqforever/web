@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+        #dv1 {
+            width: 450px;
+            height: 450px;
+            border: 1px solid blue;
+        }
+    </style>
+    <script type="text/javascript">
+
+        //代码是否需要放到Onload里面？
+        //如果JS代码需要操作页面上的元素，则将该代码放到onload里面，因为当页面加载完毕以后才会有页面上的相关元素
+        
+        //如果JS代码中没有操作页面元素的语句，则可以将改代码直接写在script标签中
+
+        window.onload = function () {
+            document.getElementById('btn1').onclick = function () {
+                document.getElementById('dv1').innerText='<a href="http://www.baidu.com">baidu</a>';//无论什么都当成字符串来处理(现在好像也兼容FF)
+
+                //document.getElementById('dv1').innerHTML='<a href="http://www.baidu.com">baidu</a>';//普通文本就当成普通文本处理，标签的话当成标签来解析，切兼容所有的浏览器
+            };       
+        };
+    </script>
+
+</head>
+<body>
+    <input type="button" name="name" value="加入" id="btn1" />
+    <div id="dv1">
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(function () {//$的ready事件
+            //选取按钮并注册一个单击事件，注意与
+            //document.getElementById('btn1').onclick = function () { };
+            //的不同
+            $('#btn1').click(function () {
+                //选取页面所有的p元素
+
+                $('p').text('大家都是P');//隐式迭代
+                $('p').text('大家都是P').css('border', 'yellow').css('backgroundColor', 'green').mouseover(function () {
+                    $(this).css('backgroundColor','pink')
+                });   //链式编程
+
+            });
+
+        //    $('#dv1').css({//Id选择器  $('#id');
+        //        width: '100px',
+        //        'height': '100px',
+        //        'border':'1px solid blue',
+        //       // 'background-color': 'green'
+        //    });
+
+        //   $('p').css('background-Color', 'red');//标签选择器  $('input');
+
+
+            //选取所有应用了x类样式的那些元素
+            $('.x').css('border', '10px solid red');//类选择器   $('.cls');
+
+
+        });
+  
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="设置p元素的显示"id="btn1" />
+    <div id="dv1">
+        dgadf 
+    </div>
+    <p id="p1" class="x">
+        啊啊啊啊啊啊啊
+    </p>
+    <p>
+        啊啊啊啊啊啊啊
+    </p>
+
+    <p>
+        啊啊啊啊啊啊啊
+    </p>
+
+    <p>
+        啊啊啊啊啊啊啊
+    </p>
+
+   
+    <input type="button" name="name" value="" />
+
+    <input type="button" name="name" value="" />
+
+    <input type="button" name="name" value="" class="x" />
+
+
+
+</body>
+</html>

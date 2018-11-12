@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>传智播客.NET培训</title>
+
+    <script type="text/javascript">
+        
+        //滚动方向
+        var direction = 'left';
+
+        //项目加载启动计时器
+        window.onload = function () {//访问页面DOM元素的部分才需要写到页面加载里面
+            setInterval(function () {
+                if (direction = 'left') {
+                    var titleText, firstChar, others, lastChar;
+                    //默认启动后计时器向左滚
+                    titleText = document.title;
+                    //截取第一个字符串
+                    firstChar = document.title.charAt(0);
+                    //截取除了第一个字符以外其他的字符串
+                    others = titleText.substring(1);
+
+                    //向左滚动，拼接
+                    document.title = others + firstChar;
+                }
+                else {
+                    //截取最后一个字符串
+                    lastChar = titleText.charAt(titleText.length - 1);
+                    //截取除了最后一个字符以外其他的字符串
+                    others = titleText.substring(0, titleText.length - 1);
+                    //向右滚动，拼接
+                    document.title = lastChar+ others;
+                   
+                }
+            }, 1000)
+
+
+            //为向左向右滚动添加单击事件
+            document.getElementById('btn1').onclick = function () {//注意，也要写在加载里面
+                direction = 'left';
+            }
+            document.getElementById('btn2').onclick = function () {
+                direction = 'right';
+            }
+
+        };
+
+           
+    
+
+    </script>
+  
+</head>
+<body>
+    <input type="button" name="name" value="向左滚" id="btn1">
+
+    <input type="button" name="name" value="向右滚" id="btn2">
+
+</body>
+</html>

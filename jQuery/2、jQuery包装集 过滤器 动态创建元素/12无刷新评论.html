@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="jQuery/jquery-3.3.1.js"></script><script type="text/javascript">
+   
+    $(function () {
+        $('#btn1').click(function () {
+            //1、获取用户输入
+            var uname = $('#txt1').val();
+            var content = $('#txt2').val();
+            //2、动态创建行添加到表格中
+            $('<tr><td>'+uname+'</td><td>'+content+'</td></tr>').appendTo('#t1');//appendTo()中可以是选择器('#t1'),也可以是一个对象（table）
+        });
+    });
+</script>
+
+</head>
+<body>
+    <table id="t1" border="1">
+        <tr>
+            <td>猫猫：</td>
+            <td>沙发也！</td>
+        </tr>
+    </table>
+    昵称：<input type="text" id="txt1" /><br />
+    <textarea id="txt2"></textarea><br />
+    <input type="button" value="提交" id="btn1">
+
+</body>
+</html>

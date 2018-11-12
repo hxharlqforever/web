@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+        .cls {
+        width:100px;
+        }
+        </style>
+    <script src="jQuery/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //选取页面上所有被禁用的元素
+            //$(':disabled').css('backgroundColor', 'red');
+
+            //选取页面上所有没有被禁用的元素
+            //$(':enabled').css('backgroundColor', 'red');
+
+            //选取form中所有被禁用的元素
+            //$('#f1 :disabled').css('backgroundColor', 'red');
+
+            //选取form中所有不被禁用的元素
+            //$('#f1 :enabled').css('backgroundColor', 'red');
+
+            //选取input中所有被禁用的元素
+            //$('input:disabled').css('backgroundColor', 'red');
+
+            //选取input中所有不被禁用的元素
+            //$('input:enabled').css('backgroundColor', 'red');
+
+            //$('#btn1').click(function () {
+            //    //获取所有被选中的checkbox和radio
+            //    //$(':checked').css('backgroundColor', 'red');
+
+            //    //获取所有没被选中的checkbox和radio
+            //    $('div:not(:checked)').css('backgroundColor', 'red');
+            //});
+
+            $('#btn2').click(function () {
+                
+                $(':selected').text(function (index,val) {
+                    return '**' + val + '**'; 
+                });
+
+                $('select :not(:selected)').text(function (index, val) {
+                    return '==' + val + '==';
+                });
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="修改被选中的option" id="btn2" />
+    <select>
+        <option value="value">辽宁</option>
+        <option value="value">吉林</option>
+        <option value="value">黑龙江</option>
+        <option value="value">山东</option>
+
+
+    </select>
+    <select>
+        <option value="value">港</option>
+        <option value="value">澳</option>
+        <option value="value">台</option>
+        <option value="value">日</option>
+
+
+    </select>
+    <input type="button" name="name" value="按钮" id="btn1" />
+    <div>
+        <input type="checkbox" name="name" value=""/>
+        <input type="checkbox" name="name" value="" />
+        <input type="checkbox" name="name" value="" />
+        <input type="radio" name="name" value="" />
+        <input type="radio" name="name" value="" />
+        <input type="radio" name="name" value="" />
+
+    </div>
+    <form action="/" method="post" id="f1">
+
+        <input type="text" name="name" value=""/>
+        <input type="text" name="name" value="" />
+        <input type="text" name="name" value="" class="cls"/>
+
+        <input type="button" name="name" value="" disabled="disabled" class="cls"/>
+        <input type="button" name="name" value="" />
+        <input type="button" name="name" value="" />
+        <input type="button" name="name" value="" disabled="disabled"/>
+
+      
+
+    </form>
+    <p>
+        ----------------------------------------------
+        <input type="button" name="name" value="" disabled="disabled" />
+        <input type="button" name="name" value="" />
+        <input type="button" name="name" value="" />
+        <input type="text" name="name" value="" disabled="disabled" />
+    </p>
+
+</body>
+</html>

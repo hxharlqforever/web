@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+            document.getElementById('btn1').onclick = function () {
+                //if (document.getElementById('dv1')) {
+                //    alert('存在');
+                //} else {
+                //    alert('不存在');
+                //}
+
+
+
+                ////根据标签名称获取页面上所有的p标签
+                //var pElements = document.getElementsByTagName('p');//返回一个集合
+                ////遍历每个p循环
+                //for (var i = 0; i < pElements.length; i++) {
+                //    pElements[i].style.backgroundColor = 'red';
+                //}
+
+                //根据元素的name来获取元素（一般是表单元素）
+                var Arr = document.getElementById('dv1').getElementsByTagName('p');
+
+                //遍历每个p循环
+                for (var i = 0; i < Arr.length; i++) {
+                    Arr[i].style.backgroundColor = 'blue';
+                }
+
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+    <input type="button" name="name" value="button" id="btn1" />
+
+    <div id="dv1">
+        <p>no zuo no die</p>
+        <p>no zuo no die</p>
+
+        <p>no zuo no die</p>
+        <p>no zuo no die</p>
+
+    </div>
+
+    <p>p1</p>
+    <p>p2</p>
+
+    <table border="1">
+        <tr>
+            <td>a</td>
+            <td>a</td>
+            <td>a</td>
+        </tr>
+      
+    </table>
+
+
+
+</body>
+</html>

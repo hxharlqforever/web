@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="jQuery/scripts/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        var arrInt = [1, 2, 3, 4, 5, 6, 7];
+        $.each(arrInt, function (key, value) {
+            //当使用each遍历普通数组的时候，索引就是键，值就是值
+            alert(key + '    ' + value);
+            if (key == 3) {
+                //break;//在each中挑出循环不能用break，需要用return false
+                return false;
+            }
+        });
+
+        //键值对集合同数组
+        var p = { 'name': '张三', 'age': 18 };
+        $.each(p, function (key, value) {
+            alert(key+value)
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

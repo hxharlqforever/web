@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+    <style>
+        #dv1 {
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+            border:1px solid red;
+        }
+    </style>
+
+    <script type="text/javascript">
+        //window.onload = function () {
+        //    document.getElementById('dv1').onclick = function () {
+
+        //        //document.write()或者document.writeln()应该与页面加载一起使用，如果页面加载后在使用，则会将原来的代码覆盖掉
+        //        document.write('Hello World!');
+        //    }
+        //}
+
+        //通过document.write()就可以实现动态向网页中创建内容（包括文本，标签，超链接，按钮等），注意不能卸载加载事件完成之后，二者并列
+        document.write('你好，世界！');
+        document.write('<a href="http://www.baidu.com">百度</a>');
+        document.write('<a href="http://www.baidu.com">谷歌</a>');
+        document.write('<a href="http://www.baidu.com">网易</a>');
+
+
+        document.write('-----------------------------------------------------------------------');
+    
+        //document.write()与document.writeln()的区别就在于writeln()输出内容后，会在源代码中换一行，而write会紧挨着输出不会有任何
+        document.writeln('你好，世界！');
+        document.writeln('<a href="http://www.baidu.com">百度</a>');
+        document.writeln('<a href="http://www.baidu.com">谷歌</a>');
+        document.writeln('<a href="http://www.baidu.com">网易</a>');
+        
+
+    </script>
+
+</head>
+<body>
+    <div id="dv1">
+
+    </div>
+    <a href="http://www.baidu.com">百度</a>
+</body>
+</html>

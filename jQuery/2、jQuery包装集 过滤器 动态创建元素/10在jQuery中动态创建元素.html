@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+        #dv1{
+        width:200px;
+        height:200px;
+        border:1px solid blue;
+        }
+    </style>
+    <script src="jQuery/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#btn').click(function () {
+                //////1、动态创建一个超链接
+                ////var aLinkObj = $('<a href="http://www.baidu.com">百度</a>');//加什么东西放进$(''),就表示新创建的一个元素
+                //////2、将超链接加入到div中
+                ////$('#dv1').append(aLinkObj);
+                ////-------------------------------------------------------
+                //$('<a href="http://www.baidu.com">百度</a>').appendTo('#dv1');//一行代码完成
+                //===================================================================================
+
+
+                ////1、动态创建一个超链接
+                //var aLinkObj = $('<a href="http://www.baidu.com">百度</a>');//加什么东西放进去就表示新创建的一个元素
+                ////2、将超链接加入到div中,加到已有的前面
+                //$('#dv1').prepend(aLinkObj);
+                ////-------------------------------------------------------
+                //$('<a href="http://www.baidu.com">百度</a>').prependTo('#dv1');
+                ////===================================================================================
+
+                //1、动态创建一个超链接
+                var aLinkObj = $('<a href="http://www.baidu.com">百度</a>');//加什么东西放进去就表示新创建的一个元素
+                //2、将超链接加入到div后面/前面
+                $('#dv1').after(aLinkObj);
+                //$('#dv1').before(aLinkObj);
+                ////-------------------------------------------------------
+                $('<a href="http://www.baidu.com">百度</a>').insertAfter('#dv1');
+                $('<a href="http://www.baidu.com">百度</a>').insertBefore('#dv1');
+
+                ////===================================================================================
+
+
+
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="button" id="btn"/>
+    <div id="dv1">
+        aaa
+        </div>
+</body> 
+</html>

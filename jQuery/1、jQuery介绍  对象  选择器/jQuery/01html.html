@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        //---------------------------直接使用js实现
+        //window.onload = function () {
+        //    alert('窗体加载完毕1111');
+        //}
+
+        //window.onload = function () {
+        //    alert('窗体加载完毕2222');
+        //}
+        ////上面的代码，当页面加载完毕后只会执行最后一个，因为最后一个onload赋值语句，会将前面的所有function都覆盖掉
+        ////如果直接通过js动态注册事件，因为注册事件的时候是通过赋值语句设置的，所以只会应用最后一次注册的事件，会将前面注册的事件处理程序覆盖掉。
+
+
+
+        //------------------------------使用jQuery实现类似效果
+        //使用jQuery注册的事件，不会被覆盖，当注册了多个事件处理程序后，当事件被触发时，会依次执行这些事件。
+        //下面这种写法其实并不是为window.onload事件注册的处理程序，而是为jQuery的ready()事件注册的处理程序。
+
+
+        //jQuery的ready事件与window.onload事件的区别：
+        //1、window.onload需要等待页面全部加载完毕，其中包含页面中的标签所引用的其他资源。（整个页面需要全部加载完毕）；而jQuery的ready事件，只要等待页面中所有的标签下载完毕就会被触发。所以说从用户“感觉”的角度来说，使用ready事件会让用户感觉处理速度“更快”了。
+
+        //以后可以用ready代替window.onload
+        jQuery(function () {
+            alert('1111111111111111111111')
+        });
+
+        $(function () {
+            alert('2222')
+        });
+
+
+        //完整的写法
+        $(document).ready(function () {
+
+        });
+
+
+        //这种写法才等价于window.onload()
+        $(window).load(function () {
+
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

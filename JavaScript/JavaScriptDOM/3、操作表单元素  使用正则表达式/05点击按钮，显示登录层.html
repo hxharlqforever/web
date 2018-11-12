@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css">
+        #dvLogin {
+            width: 300px;
+            height: 200px;
+            border: 1px solid blue;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            document.getElementById('btn1').onclick = function () {
+                document.getElementById('dvLogin').style.display = 'block';
+                document.getElementById('dvLogin').style.margin = '0 auto';
+                this.style.display = 'none';
+            }
+        };
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="登录" id="btn1" />
+    <div id="dvLogin">
+        <p>用户名：<input type="text" id="uname" /></p>
+        <p>密码：<input type="text" id="pwd" /></p>
+        <p><input type="button" name="name" value="登录" id="btn1" /></p>
+    </div>
+
+</body>
+</html>

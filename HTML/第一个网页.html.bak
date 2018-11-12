@@ -1,0 +1,78 @@
+<!doctype html>+
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>第一个网页</title>
+ </head>
+ <body bgcolor="#ccdd19">
+颜色：
+r
+g
+b 
+十六进制表示
+十六进制表示
+如：#FF0000  十六进制FF表示红色255,00表示绿色0，00表示蓝色0
+
+      这里是内容
+	  <!--
+	  能看到我吗？
+	   <body bgcolor="#">
+	   颜色：
+r
+g
+b
+
+	  -->
+	  建议：（xthml）<br/>
+	  1、编写html代码的时候所有的标签都用小写。<br/>
+	  2、标签有开始，必须有结束标签。除非该标签是自关闭的标签。<br/>
+	  3、所有的标签，如果有属性，那么属性的值一定要使用双引号引起来。<br/>
+	  
+------------------------------------------------------------------------------------
+html编码
+		<center>
+		<p> 建议：（xthml）</p>
+		<p>	1、编写html代码的时候所有的标签都用小写。</p>
+		<p> 2、标签有开始，必须有结束标签。除非该标签是自关闭的标签。</p>
+		<p> 3、所有的标签，如果有属性，那么属性的值一定要使用双引号引起来。</p>
+		</center>
+
+        <b>1、编写html代码的时候所有的标签都用小写。</b>
+		<u>1、编写html代码的时候所有的标签都用小写。</u>
+		<i>1、编写html代码的时候所有的标签都用小写。</i>
+		<strong>加粗</strong>
+		<em>斜体</em><br/>
+
+		<sup>上标</sup><br/>
+		10<sup>2</sup><br>
+		<sub>下标</sub><br/>
+
+		<hr color="yellow" size="100"  width="800" align=right/><!-- 水平线size:厚度    align：对齐方式-->
+
+		<font color="red" size="7" face="黑体">字体标签</font><!--size字体范围1~7，face表示字体-->
+
+
+		a          aa      a    a  a  a a a a  a a                a aa
+		<pre>a          aa      a    a  a  a a a a  a a                a aa</pre><!--<pre></pre>保持原样输出-->
+
+
+		A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B<!--&nbsp表示空格，br/表示换行-->
+
+		一些特殊符号：<br/>
+		&copy;  版权符号<br/>
+		&lt;  小于号   less than<br/>
+		&gt;   大于号  greater than<br/>
+		&nbsp;  空格<br/>
+		<!--小提示：ctrl+J ，自动复制上一行，ctrl+d，显示当前时间-->
+		&amp;地址符，可对特殊符号进行转义，如&amp;lt;表示&lt号
+		
+		
+
+
+		<!--尽量避免使用html标签，所有的样式用CSS来调-->
+		</body>
+</html>

@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        td {
+        font-size:50px;
+        color:green;
+        cursor:pointer;
+        }
+    </style>
+    <script>
+        //给页面元素，要写在onload中
+        window.onload = function () {
+            //获取所有的列
+            var tds = document.getElementById('tb1').getElementsByTagName('td');
+
+            for (var i = 0; i < tds.length; i++) {
+
+                //为每个td设置一个分数
+                tds[i].setAttribute('score',(i+1)*10);
+
+                //鼠标悬浮事件-----------------------------------
+                tds[i].onmouseover = function () {
+
+                    //设置从第0个开始，到当前鼠标移动到的td为止的所有五角星都变成实心的
+                    for (var j = 0; j < tds.length; j++) {
+                        tds[j].innerHTML = '★';
+                        if (tds[j] == this) {
+                            break;
+                        }
+                    }
+                };
+                //鼠标离开事件----------------------------------
+                tds[i].onmouseout = function () {
+                    var tdIndex = -1;//用阿里标记第几个td具有isclicked属性
+                    for (var j = 0; j < tds.length; j++) {
+                        //设置所有的td都变成空心
+                        tds[j].innerHTML = '☆';
+
+                        //记录下来，哪个td具有isclicked属性
+                        if (tds[j].getAttribute('isclicked'))
+                        {
+                            tdIndex = j;
+                        }
+                    }
+                    //2、找到当前具有isclicked属性的那个td,将从0开始到这个td的每一个td中的内容都设置为★
+                    for (var x = 0; x <=tdIndex; x++) {
+                        tds[x].innerHTML = '★';
+                    }
+                };
+                //为每一个td注册一个单击事件-----------------------------------
+                tds[i].onclick = function () {
+
+                    //清除所有td的isclicked 属性
+                    for (var j = 0; j < tds.length; j++) {
+                        tds[j].removeAttribute('isclicked');
+
+                    }
+                    //设置当前被点击的状态
+                    this.setAttribute('isclicked', 'isclicked');//IE 不行，在FF中，The World中可以
+
+                    alert(this.getAttribute('score'));
+
+                   
+                };
+
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <table id="tb1">
+        <tr>
+            <td>☆</td>
+            <td>☆</td>
+            <td>☆</td>
+            <td>☆</td>
+            <td>☆</td>
+        </tr>
+    </table>
+
+</body>
+</html>

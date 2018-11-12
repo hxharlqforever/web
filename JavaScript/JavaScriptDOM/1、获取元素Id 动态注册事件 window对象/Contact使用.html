@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+    <script type="text/javascript">
+        var arrName = ['曹操', '刘备', '孙权'];
+        var arrName2 = ['诸葛亮', ['赵云', '关羽', '张飞']];
+
+        var newArr = arrName.concat(arrName2);
+        alert(newArr);
+        alert(newArr.length);//注意，这里长度5
+
+
+        var newArr2 = arrName.concat('贾诩', '', 15, false, 55.3);//可以加很多元素
+        alert(newArr2);
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

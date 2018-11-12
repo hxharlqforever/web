@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        //注册一个鼠标移动事件，mousemove
+        //body有一个范围问题，不要为body注册mousemove事件，为整个document注册
+        document.onmousemove = function (evt) {
+            var e = window.event || evt;
+            var imgObj = document.getElementById('img1');
+            imgObj.style.left = e.clientX + 'px';
+            imgObj.style.right = e.clientY + 'px';
+        };
+
+    </script>
+</head>
+<body>
+   <!--图片为何显示不出来？？？在editplus中是可以显示的-->
+    <img id="img1" src="F:\\LearningTest\\picture\\猫猫.jpg" alt="Alternate Text" />
+    
+</body>
+</html>

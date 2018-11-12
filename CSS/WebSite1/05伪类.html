@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        /*伪选择器，为标签的不同状态设定不同的样式（标签后加冒号）*/
+        /*
+            a:visited:超链接点击过的样式
+            a:active:超链接选中时的样式
+
+            a:link:超链接未被选中时的样式
+            a:hover:鼠标移到超链接时的样式
+            */
+        a:link {
+            font:14px 宋体;
+            color:blue;
+            text-decoration:none;
+        }
+        a:hover {
+            color:yellow;
+            text-decoration:underline;
+        }
+        a:active {
+            color:red;
+            text-decoration:line-through;
+        }
+        a:visited {
+            color:green;
+            font:80px 黑体; /*颜色有作用，字体不起作用，为什么？？？*/
+        }
+        </style>
+</head>
+<body>
+    <ul>
+        <li><a href="http://www.baidu.com">百度</a></li>
+        <li><a href="http://www.google.com">谷歌</a></li>
+        <li><a href="http://www.sina.com">新浪</a></li>
+        <li><a href="http://www.163.com">网易</a></li>
+    </ul>
+
+</body>
+</html>

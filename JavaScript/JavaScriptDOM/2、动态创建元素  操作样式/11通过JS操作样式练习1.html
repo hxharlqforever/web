@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            //为每一个文本框注册一个失去焦点事件
+            //1、获取所有的input标签
+            var inputs = document.getElementsByTagName('input');//根据标签名input
+
+            //遍历
+            for (var i = 0; i <inputs.length; i++) {
+                if(inputs[i].type=='text'){
+                    //为每个元素注册一个失去焦点事件
+                    inputs[i].onblur = function () {
+                        if (this.value.length == 0) {
+                            this.style.backgroundColor = 'red';
+                        } else {
+                            this.style.backgroundColor = 'white';
+                        }
+                    };
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+    <input /><input /><input /><input /><input /><input /><input />
+
+</body>
+</html>

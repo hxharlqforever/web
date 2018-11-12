@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            //选取页面上所有的p元素，设置
+            //$('p').css('backgroundColor', 'red');
+
+            //---------------------------------------后代:使用空格隔开
+            //选取页面上dv1下的p元素，设置
+            //$('#dv1 p').css('backgroundColor', 'green ');//层次选择器$('#dv1 p')，中间有空格，注意与$('p.test')类的区别
+
+            //选取页面上所有dv下的p元素，设置
+            //$('div p').css('backgroundColor', 'blue');
+
+            //设置页面上所有的span样式
+            //$('span').css('color', 'yellow')
+
+            //选取body下的所有的span
+            //$('body span').css('color','yellow')
+
+
+            //-------------------------------子元素选择器：使用>隔开   $('选择器1 > 选择器2')
+            //选取body下的直接子元素span
+            $('body > span').css('color', 'pink')
+
+
+           
+
+            //注意：选择器表达式中的空格不能少。
+
+        });
+
+    </script>
+</head>
+<body>
+    <span>我是body下的span</span>
+    <span>我是body下的span</span>
+    <span>我是body下的span</span>
+    <div id="dv2">
+        <span>我是div下的span</span>
+        <span>我是div下的span</span>
+        <span>我是div下的span</span>
+        <p>
+           0000000000000
+            <span>我是p下的span</span>
+            <span>我是p下的span</span>
+        </p>
+        <p>
+            00000000000000
+        </p>
+        <p>
+            0000000000000000
+        </p>
+        <p>
+           00000000000000000000
+        </p>
+
+    </div>
+    <div id="dv1">
+        <p >
+          111111111111111
+        </p>
+        <p>
+            111111111111111
+        </p>
+        <p>
+            111111111111111
+        </p>
+        <p>
+            111111111111111
+        </p>
+
+    </div>
+    <p>
+        2222222222222
+    </p>
+    <p>
+       2222222222222
+    </p>
+    <p>
+       2222222222222
+    </p>
+
+</body>
+</html>

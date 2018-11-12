@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css">
+        select {
+            width: 100px;
+            height: 150px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        //全部移动
+        function moveAll(sone,stwo) {
+            //获取
+            var opts = sone.getElementsByTagName('option');
+            //循环，移动
+            for (var i = 0; i < opts.length; i++) {
+                stwo.appendChild(opts[i]);
+            }
+
+        }
+        function move() {
+
+        }
+
+        window.onload = function () {
+            //全部移动到右边
+            document.getElementById('Allright').onclick = function () {
+                moveAll(document.getElementById('s1',document.getElementById('s2')));
+            }
+
+            //全部移动到左边
+            document.getElementById('Allleft').onclick = function () {
+
+            }
+
+            //选择移动到左边
+            document.getElementById('left').onclick = function () {
+
+            }
+            //选择移动到右边
+            document.getElementById('right').onclick = function () {
+
+            }
+        }
+
+
+
+
+
+
+
+
+    </script>
+
+</head>
+<body>
+    <select multiple="" id="s1">
+        <option value="value">增加</option>
+        <option value="value">删除</option>
+        <option value="value">修改</option>
+        <option value="value">查询</option>
+        <option value="value">保存</option>
+    </select>
+    <input type="button" name="name" value=">>" id="Allright" />
+    <input type="button" name="name" value=">" id="right" />
+    <input type="button" name="name" value="<" id="left" />
+    <input type="button" name="name" value="<<" id="Allleft" />
+    <select id="s2"></select>
+
+</body>
+</html>

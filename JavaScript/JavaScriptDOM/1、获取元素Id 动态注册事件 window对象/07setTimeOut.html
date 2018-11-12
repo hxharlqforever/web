@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+
+        //滚动方向
+        var direction = 'left', timeOutId;
+
+        //项目加载启动计时器
+        window.onload = function () {
+            document.getElementById('btn1').onclick = function () {
+
+                ////每隔2s弹一次
+                //setInterval(function () {
+                //    alert('Hello');
+                //}, 2000)
+
+                //2s后只弹出一次
+                //超出规定时间后只执行一次
+                timeOutId= setTimeout(function () {
+                    alert('Hello');
+                }, 10000)
+            }
+
+            document.getElementById('btn2').onclick = function () {
+                clearTimeout(timeOutId);//还没达到时间，取消显示
+            }
+           
+        };
+
+
+    </script>
+
+</head>
+<body>
+    <input type="button" name="name" value="button" id="btn1">
+    <input type="button" name="name" value="取消" id="btn2">
+
+</body>
+</html>

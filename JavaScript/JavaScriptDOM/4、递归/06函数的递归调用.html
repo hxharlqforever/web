@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        var index = 0;
+
+        //function myFun() {
+        //    index++;
+        //    alert(index);
+        //    if (index < 5) {
+        //        myFun();
+        //    }
+        //}
+
+        //myFun();
+
+        var f1 = function () {
+            index++;
+            alert(index);
+            if (index < 5) {
+                //f1();//不要写死
+                arguments.callee();//表示函数自身
+            }
+        }
+
+        // f1();
+        var f2 = f1;
+        f1 = null;
+        f2();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

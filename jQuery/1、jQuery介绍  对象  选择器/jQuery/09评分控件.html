@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <script>
+        $(function () {
+            //为每个td注册一个mouseover事件
+            $('#t1 td').mouseover(function () {
+                $(this).text('★').prevAll().text('★').end().nextAll().text('☆');//鼠标经过时后面的都置为空心
+            }).mouseout(function () {
+                //当鼠标移开的时候吧所有的td都编程空心五角星，把具有isclicked属性的Td以及之前的变成实心五角星
+                $('#t1 td').text('☆');
+                $('#t1 td[isclicked=isclicked]').text('★').prevAll().text('★');
+            }).click(function () {
+               $(this).attr('isclicked', 'isclicked').siblings().removeAttr('isclicked');//等价于setAttribute()，点哪个哪个变为isclicked
+                //点击某个td是显示分数
+                $('#pscore').text($(this).attr('score'));
+            }).attr('score', function (index) {
+                return (index + 1) * 10;
+               //.attr(attributeName,function(index,attr)),内部迭代，会将匿名函数的每个返回值设置到每个元素的attr上
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <p id="pscore">
+
+    </p>
+    <table id="t1">
+        <tr>
+            <td>☆</td>
+            <td>☆</td>
+            <td>☆</td>
+            <td>☆</td>
+            <td>☆</td>
+        </tr>
+    </table>
+
+</body>
+</html>

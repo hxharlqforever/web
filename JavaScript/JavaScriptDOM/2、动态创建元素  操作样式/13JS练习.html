@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+    <script type="text/javascript">
+        window.onload = function () {
+
+            //1、超链接单选效果------------------------------------------------
+            //1.1选取页面上所有的超链接标签
+            var aLinks = document.getElementsByTagName('a');
+            //为每个标签注册一个单击事件
+            for (var i = 0; i < aLinks.length; i++) {
+                //为a标签注册单击事件
+                aLinks[i].onclick = function () {
+                    //设置其他所有超链接背景色变白色
+                    for (var j = 0; j < aLinks.length; j++) {
+                        aLinks[j].style.backgroundColor = 'blue';
+                    }
+
+                    //设置当前被点击的标签背景色为红色
+                    this.style.backgroundColor = 'red';
+                    return false;
+                };
+            }
+            //
+            //----------------------------------------点击按钮实现隔行变色
+            //1、为那妞注册单击事件
+            document.getElementById('btn1').onclick = function () {
+                //2、获取t1表格下的所有样的行
+                var trs = document.getElementById('tb1').getElementsByTagName('tr');
+                for (var i = 0; i < trs.length; i++) {
+                    if (i % 2 == 0) {
+                        trs[i].style.backgroundColor = 'red';//索引从零开始，这是奇数行
+                    } else {
+                        trs[i].style.backgroundColor = 'green';
+                    }
+
+                }
+
+            };
+            //-----------------------------------文本框获得焦点颜色变黄
+            //获取所有的input标签
+            var inputs = document.getElementsByTagName('input');
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type == 'text') {
+                    //为文本框注册一个获得焦点事件
+                    inputs[i].onfocus = function () {
+                        //设置当前获得焦点的文本框背景颜色为黄色
+                        this.style.backgroundColor = 'yellow';
+                    };
+
+                    //失去焦点的背景色变白
+                    inputs[i].onblur = function () {
+                        this.style.backgroundColor = 'white';
+                    };
+                }
+               
+            }
+
+            //----------------------------------------表格点击行背景变色
+            //1、获取所有行
+            var trs= document.getElementById('tb1').getElementsByTagName('tr');
+            //2、为每行注册单击事件
+            //遍历每一行
+            for (var i = 0; i < trs.length; i++) {
+                //为每一行注册一个单击事件
+                trs[i].onclick = function () {
+                    for (var j = 0; j < trs.length; j++) {
+                        trs[j].style.backgroundColor = '';//将每一行恢复为默认颜色
+                    }
+                    //设置当前点击行我紫色
+                    this.style.backgroundColor = 'purple';
+                };
+            }
+        };
+
+
+    </script>
+
+</head>
+<body>
+    <a href="http://www.baidu.com">百度</a>
+    <a href="http://www.baidu.com">百度</a>
+    <a href="http://www.baidu.com">百度</a>
+    <a href="http://www.baidu.com">百度</a>
+    <a href="http://www.baidu.com">百度</a>
+    <a href="http://www.baidu.com">百度</a>
+    <a href="http://www.baidu.com">百度</a>
+    <input type="button" name="name" value="隔行变色" id="btn1" />
+    <table id="tb1">
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+        </tr>
+        <tr>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            <td>AAA</td>
+            
+        </tr>
+      
+    </table>
+    <input type="checkbox" name="name" value="隔行变色" id="btn1" />
+    <input />
+    <input />
+    <input />
+    <input />
+    <input />
+    <input />
+    <input />
+    <input />
+    <input />
+    <input />
+</body>
+</html>

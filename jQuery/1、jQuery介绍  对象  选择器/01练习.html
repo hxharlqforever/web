@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+        td {
+            text-align: center;
+        }
+    </style>
+
+
+
+    <script>
+        //删除按钮的单击事件
+        function btnDelete(currentbtn) {
+            //获取当前按钮所在的行m
+            var tr = currentbtn.parentNode.parentNode;
+            //从Tbody中删除某行
+            document.getElementById('tbody').removeChild(tr);
+        }
+
+        window.onload = function () {
+            document.getElementById('btn1').onclick = function () {
+
+                //获取用户输入的数据
+                var name = document.getElementById('txtName').value;
+                var age = document.getElementById('txtAge').value;
+                //获取tbody对象
+                var obj = document.getElementById('tbody');
+                //像tbody中插入一行
+                var currentRow = obj.insertRow(-1);
+                //向tbody中插入3行
+                currentRow.insertCell(-1).innerHTML = name;
+                currentRow.insertCell(-1).innerHTML = age;
+                currentRow.insertCell(-1).innerHTML = '<input type="button" value="删除" onclick="btnDelete(this);"/>';
+            };
+        };
+    </script>
+
+</head>
+<body>
+    <fieldset>
+        <legend>增加人员信息</legend>
+        <p>姓名:<input id="txtName" /></p>
+        <p>年龄:<input id="txtAge" /></p>
+        <p><input type="button" name="name" value="增加" id="btn1" /></p>
+    </fieldset>
+    <table border="1" cellpadding="2" cellspacing="2" style="width:300px;">
+        <caption>人员信息表</caption>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>删除</th>
+            </tr>
+
+        </thead>
+
+        <tbody id="tbody"></tbody>
+
+    </table>
+</body>
+</html>

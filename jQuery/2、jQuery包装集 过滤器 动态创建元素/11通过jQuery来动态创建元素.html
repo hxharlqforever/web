@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="jQuery/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        var websites = {
+            '百度': 'http://www.baidu.com',
+            '新浪': 'http://www.sina.com.cn',
+            '搜狐': 'http://www.sohu.com',
+            '网易':'http://www.163.com'
+        };
+        $(function () {
+            $('#btn').click(function () {
+                //动态创建表格
+                var tbl = $('<table border="1"></table>').appendTo('body');
+                //动态创建行,遍历每一个网址，动态添加行
+                for (var key in websites) {
+                    $('<tr><td>'+key+'</td><td><a href="'+websites[key]+'">'+key+'</a></td></tr>').appendTo(tbl);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="button" id="btn" />
+</body>
+</html>

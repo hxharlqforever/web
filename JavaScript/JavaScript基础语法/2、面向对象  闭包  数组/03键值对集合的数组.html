@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        //var dict = new Array();
+        //dict['HX'] = '黄旭';
+        //dict['ZY'] = '郑洋';
+        //dict['SJ'] = '孙静';
+        //dict['0'] = '张三';//普通的数组也可以看做是一个特殊的键值对
+
+        ////根据键查找值
+        //alert(dict['HX']);
+
+        ////遍历键值对数组
+        ////输出dict的长度
+        //alert(dict.length);//如果只是键值对数组，那么length的值是0，所以无法通过for循环遍历，这时遍历键值对要用for-in循环（类似于C#中foreach循环）
+        //for (var key in dict) {//遍历C#中的每个键
+        //    alert('键：' + key + '值：' + dict[key]);
+        //}
+
+        //-----------------------------------------------------------键值对集合的简写方式：对象字面量
+        var dict = { 'HX': '黄旭', 'BPF': '包品芳', 'YY': '殷英' };
+        alert(dict.HX);
+        dict.LF = '刘芳';//动态数组，可直接添加数组里的量
+        alert(dict.LF);
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

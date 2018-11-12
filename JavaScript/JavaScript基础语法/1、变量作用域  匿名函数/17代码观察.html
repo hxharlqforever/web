@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        //var x = 1; y = 0; z = 0;
+        //function f1(n) {
+        //    n = n + 1;
+        //    return n;
+        //}
+        //y = f1(x);
+
+        //function f1(n) {
+        //    n = n + 3;
+        //    return n;
+        //}
+        //z = f1(x);
+
+        //alert(y + '...............' + z)
+
+        //因为函数有“预解析”功能，所以在执行之前会将所有的函数（在一个标签内）先进行预解析。预解析得的时候就会使用最后定义的函数覆盖前面定义的函数
+
+        var user_name = 'steve';
+        function f1() {
+            alert(user_name);//undefined
+            //因为：
+            //1、在函数内部声明的变量在整个函数中都可以使用
+            //2、如果遇到“局部变量”与“全局变量”冲突的情况，优先使用“局部变量”
+            //3、“变量”与“函数”具有相同的预解析功能，在函数的代码正式执行之前，先会解析函数中声明的所有的的变量，然后执行该函数，也就是说在上面 alert(user_name)执行的时候，局部变量user_name就已经声明，但没有赋值（因为预解析只解析声明，不解析赋值）
+
+             var user_name = 'yzk';
+            alert(user_name);//yzk
+        }
+        f1();
+        alert(user_name);//steve
+
+
+        //正是因为函数中具有变量预解析功能，所以一般函数中声明变量时，在函数的一开始就把所有要使用的变量都声明好
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

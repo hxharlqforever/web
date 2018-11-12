@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        //var n = 10, m = 100;
+        //alert(n<m && m>n);  //true
+
+        var r = "a" || "";
+        alert(r);  //a
+
+        r = null || 15;
+        alert(r);  //15
+        
+        r = "a" && 0;
+        alert(r);  //0
+
+        r = null && 15;
+        alert(r);  //null
+
+        r = "12345" || 12;
+        alert(r);  //12345
+
+        r = "12345" && 12;
+        alert(r);  //12,输出后面一个
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+        #dv1 {
+            background-color: blue;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+
+
+    <script type="text/javascript">
+        window.onload = function () {
+            var e, x, y;
+            document.getElementById('dv1').onclick = function (evt) {
+                e = window.event || evt;//考虑浏览器兼容
+
+                //获取当前鼠标点击的坐标
+                //相对于页面左上角像素位置
+                //x = e.clientX;
+                //y = e.clientY;
+
+
+                //相对于屏幕左上角
+                //x = e.screenX;;
+                //y = e.screenY;
+
+                //相对于元素自身的偏移
+                x = e.offsetX;
+                y = e.offsetY;
+
+                alert(x+','+y)
+            }
+
+
+        }
+
+    </script>
+</head>
+<body>
+    <div id="dv1">
+
+    </div>
+
+</body>
+</html>

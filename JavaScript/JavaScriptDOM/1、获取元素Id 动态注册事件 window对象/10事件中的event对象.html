@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+        #dv1 {
+            background-color:blue;
+            width:50px;
+            height:50px;
+        }
+    </style>
+
+    <script>
+
+        window.onload = function () {
+
+          
+
+
+            //-----------------------------------------------------------------------------------------------------------------
+            ////验证火狐(Firefox)
+            //document.getElementById('btn1').onclick = function () {
+            //    var clickString = document.getElementById('dv1').onclick.toString();
+            //    alert(clickString);
+            //}
+
+            ////为层注册一个单击事件
+            //document.getElementById('dv1').onclick = function (evt) {
+            //    if (evt.ctrlKey)//常用的只有Ctrl，alt，shift，其余的键需要判断
+            //        {
+            //            alert('ctrl键被同时按下');
+            //        }
+            //    else if (evt.shiftKey) {
+            //        alert('shift键被同时按下');
+            //    }
+            //    else {
+            //        alert('普通点击');
+            //    }
+            //}
+            //---------------------------------------------------------------------------------------------------------------------
+
+            ////为层注册一个单击事件(IE)
+            //document.getElementById('dv1').onclick = function () {
+            //    //alert('cengbeidianjile');
+
+            //    //通过event对象获取，当鼠标点击的时候时候是否按下了某个键
+            //    ////1、先获取event事件对象
+            //    //var evt = window.event;
+
+            //    //if (window.event.ctrlKey)//常用的只有Ctrl，alt，shift，其余的键需要判断
+            //    //{
+            //    //    alert('ctrl键被同时按下');
+            //    //}
+            //    //else if(evt.shiftKey){
+            //    //    alert('shift键被同时按下');
+            //    //}
+
+            //    //在IE浏览器下获取事件对象与其他浏览器获取事件对象是有区别的
+
+            //    //在IE8以及更早的浏览器下要获取事件对象，必须通过window.event方式来获取对象
+            //    //但在Firefox等标准的浏览器下，获取对象不能通过window.event方式，只能在事件处理程序中加一个参数，而这个参数就是事件对象
+            //};
+
+
+
+            //兼容性代码
+            //当我们要编写兼容不同浏览器代码的时候，最好不要做浏览器判断，而要用‘能力检测’
+            //即不要if（IE）。。。if（Firefox）。。。要用能力检测，如果window.event可以，就用，不行就用evt
+            //var e = window.event || evt;
+        };
+        </script>
+</head>
+<body>
+    <div id="dv1">
+
+    </div>
+    <input type="button" name="name" value="button" id="btn1" />
+
+</body>
+</html>

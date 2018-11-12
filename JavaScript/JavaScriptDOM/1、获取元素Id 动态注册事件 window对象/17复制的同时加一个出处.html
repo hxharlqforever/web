@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+    <script>
+        window.onload = function () {
+           
+            //为body注册一个复制oncopy事件
+            document.body.oncopy = function () {
+
+                setTimeout(function () {
+                    //1、先获取用户拷贝的内容
+                    var msg = clipboardData.getData('text');
+                    //2、在复制的内容后加上出处
+                    msg += '(PS:本文出自BBC)';
+                    //3、再将新闻办发哪个瑞剪切板中
+                    clipboardData.setData('text',msg);
+                }, 100)
+            }
+        };
+
+    </script>
+</head>
+<body>
+    Mr Trump did not say what conditions the US had set for the summit but, asked by a reporter about the North's arsenal, he said "denuclearisation must take place".
+    The 12 June summit is due to take place in Singapore. It follows a summit between the two Korean leaders in April.
+    North Korea is expected to dismantle a nuclear test site this week as a good will gesture but the demolition may be delayed by bad weather.
+
+</body>
+</html>

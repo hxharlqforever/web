@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('btn1').onclick = function () {
+                document.getElementById('dv1').className = 'cls';
+            };
+
+            document.getElementById('btn2').onclick = function () {
+                document.getElementById('dv1').className = document.getElementById('dv1').className + ' text';
+            };
+            document.getElementById('btn3').onclick = function () {
+                document.getElementById('dv1').className = document.getElementById('dv1').className + ' test1';//!!!注意，test1一定要有空格
+            };
+        };
+
+
+    </script>
+
+    <style type="text/css">
+        .cls {
+        width:300px;
+        height:300px;
+        border:1px solid blue;
+        }
+        .text {
+        background-color:yellow;
+        color:red
+        }
+        .test1 {
+        font-size:30px;
+        font-family:微软雅黑;
+        background-color:red;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" name="name" value="按钮1" id="btn1" />
+    <input type="button" name="name" value="按钮2" id="btn2" />
+    <input type="button" name="name" value="按钮3" id="btn3" />
+    <input type="button" name="name" value="按钮4" id="btn4" />
+   <div id="dv1">
+       我是一只小青蛙
+       </div>
+</body>
+</html>

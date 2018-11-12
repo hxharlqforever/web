@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        //1/当变量未赋值的时候的，name变量的值未undefined
+        var x;
+        alert(x);
+        //2、当使用了一个没有声明的变量的时候浏览器会在会直接报错
+        //alert(y);
+        //在使用变量之前，先校验该变量是否可用typeof
+        if (typeof (w) == 'undefined') {
+            alert('变量不可用');
+        }
+        else {
+            alert(w);
+        }
+        //3、方法没有返回值的时候，接收到的返回值就是undefined
+        var n = fun1();
+        alert(n);
+        function fun1()//定义一个没有返回值的方法
+        {
+        }
+        //--------------------------------------------------------------------------------------------
+        //null值表示指向了一个‘空对象’，需要为显示为m赋一个空值
+        //什么情况下需要显示为变量赋一个null值？一般在一个对象使用完毕，需要显示告诉浏览器可以被垃圾回收的情况下，这样这个变量所指的对象就可以被垃圾回收了
+        var m = null;
+        //无论变量的值是null值，还是undefined都表示变量不可用。所以在使用某些变量的时候可以提前对变量做校验，判断该变量是否可用
+        //var a;
+        var a = '';
+        if (typeof (a) != 'undefined' && a != null) {
+            alert('变量可用');
+        }
+        else {
+            alert('变量不可用');
+        }
+        //注意：把null转为数字，结果为0；把undefined转为数字结果为NaN
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

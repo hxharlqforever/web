@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('btn1').onclick = function () {
+                //1、采集用户数据
+                var uname = document.getElementById('txt1').value;
+                var content = document.getElementById('txt2').value;
+
+                //--------------------------------------------------------------------------------------old
+                ////2、动态创建行对象
+                //var trLine = document.createElement('tr');
+
+                //var td1 = document.createElement('td');
+                //td1.innerHTML = uname;
+                //var td2 = document.createElement('td');//createElement()的括号里要加引号！！！
+                //td2.innerHTML = content;
+
+                //trLine.appendChild(td1);
+                //trLine.appendChild(td2);
+
+                ////3、将行加入到表格中
+                //document.getElementById('tblComments').appendChild(trLine);
+                //---------------------------------------------------------------------------------------
+                //获取表格对象
+                var tblObj = document.getElementById('tblComments');
+                //向表格中添加一行
+                var currentRow = tblObj.insertRow(-1);
+                //向行中添加两列，并插入值（innerHTMl插入文字等内容）
+                currentRow.insertCell(-1).innerHTML = uname;
+                currentRow.insertCell(-1).innerHTML = content;
+
+
+            };
+        };
+    </script>
+
+</head>
+<body>
+    <table id="tblComments" border="1">
+        <tr>
+            <td>猫猫：</td>
+            <td>沙发也！</td>
+            </tr>
+    </table>
+    昵称：<input type="text" id="txt1"/><br/>
+    <textarea id="txt2"></textarea><br/>
+    <input type="button" value="评论" id="btn1">
+
+</body>
+</html>

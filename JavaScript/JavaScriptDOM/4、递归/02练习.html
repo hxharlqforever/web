@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        var area = {
+            "山东": ["青岛", "济南", "烟台"],
+            "山西": ["大同", "太原", "运城"],
+            "广东": ["汕头", "东莞", "广州"],
+        };
+        window.onload = function () {
+            //1、加载所有省份的信息
+            LoadProvince();
+
+            //2、为省份的下拉菜单注册onchange事件
+
+            document.getElementById('s1').onchange = function () {
+            
+                //获取当前城市的下拉菜单对象
+                var sCity = document.getElementById('s2');
+
+                //0.1清空城市列表中的所有原有城市
+                while (sCity.firstChild) {
+                    sCity.removeChild(sCity.firstChild);
+                
+                }
+
+                //1、获取当前选中的省份
+                var proName = this.value;
+                //2、根据省份获取对应的城市列表
+                var cities=area[proName];
+
+                //3、把所有的城市数据绑定到城市的下拉菜单中
+                for (var i = 0; i < cities.length; i++) {
+                    var opt = document.createElement('option');
+                    opt.innerHTML = cities[i];
+                    opt.value = cities[i];
+                    sCity.appendChild(opt);
+                }
+            };
+
+            //手动触发一次s1的onchange方法
+            document.getElementById('s1').onchange();
+
+
+        };
+
+        function LoadProvince() {
+            //1、获取省份的下拉菜单
+            var sp = document.getElementById('s1');
+            //2、遍历所有数据
+            for (var key in area) {
+                //动态创建一个option
+                var opt = document.createElement('option');
+                opt.innerHTML = key;
+                opt.value = key;
+                //将其加入到省份的下拉菜单下
+                sp.appendChild(opt);
+            }
+        }
+    </script>
+</head>
+<body>
+    省：
+    <select id="s1"></select>
+    市：
+    <select id="s2"></select>
+    <p>-----------------------------</p>
+   
+
+</body>
+</html>

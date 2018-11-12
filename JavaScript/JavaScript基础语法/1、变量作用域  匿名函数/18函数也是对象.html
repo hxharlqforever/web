@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function myfunction(x,y) {
+            for (var i = 0; i < 10; i++) {
+                alert(i);
+            }
+        }
+        //把myfunction当成方法调用
+        myfunction();
+        //同时myfunction也是一个对象，有属性和方法
+        alert(myfunction.toString());//返回方法的源代码（仅限于自己用JS写的方法，系统自带的方法不行）
+
+        alert(myfunction.length);//函数定义的形参的个数
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

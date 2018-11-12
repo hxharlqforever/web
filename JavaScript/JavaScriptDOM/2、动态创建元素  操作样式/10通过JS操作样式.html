@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+    <script type="text/javascript">
+
+        //代码是否需要放到Onload里面？
+        //如果JS代码需要操作页面上的元素，则将该代码放到onload里面，因为当页面加载完毕以后才会有页面上的相关元素
+
+        //如果JS代码中没有操作页面元素的语句，则可以将改代码直接写在script标签中
+
+        window.onload = function () {
+            document.getElementById('btn1').onclick = function () {
+                //获取层对象
+                var dvObj = document.getElementById('dv1');
+
+                //设置层的一些样式
+                dvObj.style.border = '1px solid blue';
+                dvObj.style.width = '500px';
+                dvObj.style.height = '450px';
+                dvObj.style.backgroundColor = 'purple';
+                dvObj.style.color = 'yellow';
+                dvObj.style.fontSize = '45px';
+                dvObj.style.fontFamily = '微软雅黑';
+                //dvObj.style.styleFloat = 'right';//IE
+                dvObj.style.cssFloat = 'right';//FF
+
+            };
+            document.getElementById('btn2').onclick = function () {
+                //获取层对象
+                var dvObj = document.getElementById('dv1').style.display = 'none';
+            };
+        };
+    </script>
+
+</head>
+<body>
+    <input type="button" name="name" value="button" id="btn1" />
+    <input type="button" name="name" value="隐藏层" id="btn2" />
+    <div id="dv1">
+        我是一个div
+    </div>
+
+
+</body>
+</html>

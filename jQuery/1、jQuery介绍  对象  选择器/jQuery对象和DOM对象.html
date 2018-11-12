@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="jQuery/scripts/jquery-3.3.1.js"></script>
+    <style type="text/css">
+        #dv1 {
+        width:200px;
+        height:100px;
+        background-color:green;
+        }
+    </style>
+    <script  type="text/javascript">
+        window.onload = function () {
+            document.getElementById('btn1').onclick = function () {
+                //获取层对象
+                //页面上元素对象才叫做DOM对象，，数组，日期对象，这些对象不是DOM对象
+                var obj = document.getElementById('dv1');
+
+                //当直接使用DOM对象的时候存在浏览器兼容性问题
+                //为了解决浏览器兼容性问题，可以把DOM对象转换成jQuery对象，然后再操作
+                obj.innerText = 'Hello World!';
+
+                //-----------DOM转换为jQuery
+                var $obj = $(obj);
+                //把DOM对象转换为jQuery对象后，就可以调用对应的所有的jQuery对象的成员了
+                $obj.text('你好，世界');
+                
+
+                //DOM对象只能使用DOM对象的成员，jQuery对象只能使用jQuery对象的成员，这两种对象是相互独立的
+
+                //----------jQuery转换为DOM
+                var domDiv = $obj[0];
+                //var domDiv=$obj.get(0);
+                domDiv.innerHTML = 'aaaaa';
+
+
+                //jQuery对象
+                //可以把DOM对象转换成jQuery对象
+                //也可以吧jQuery对象转换成DOM对象
+            }
+        };
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="button" id="btn1">
+    <div id="dv1">
+        </div>
+
+</body>
+</html>

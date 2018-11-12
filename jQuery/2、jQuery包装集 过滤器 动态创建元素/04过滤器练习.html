@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="jQuery/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(function () {//ready函数
+            $('#btn1').click(function () {
+               
+                $('#t1 tr:first').css('fontSize', '70px');//第一个
+
+                $('#t1 tr:last').css('color', 'red');//最后一个
+
+                //索引大于0 ,且小于3的
+                $('#t1 tr:gt(0):lt(3)').css('fontSize', '28px');
+
+                //偶数行
+                $('#t1 tr:odd:not(:last)').css('backgroundColor', 'red');//索引奇数的，1，3，5，7，
+
+
+                //$('p:eq(1)').css('backgroundColor', 'red');//第二个
+                //$('p:eq(0)').css('backgroundColor', 'red');//第一个
+
+
+                //偶数
+                //$('p:even').css('backgroundColor', 'red');//索引偶数的，0，2，4，6，
+
+                //奇数
+                //$('p:odd').css('backgroundColor', 'red');//索引奇数的，1，3，5，7，
+
+                
+
+                //索引小于3的
+                //$('p:lt(3)').css('backgroundColor', 'black');
+
+                //选取除了应用某样式的那些
+                //$('p:not(.cls)').css('backgroundColor', 'blue');
+
+                //设置所有标题都变成红色
+                //$('h1,h2,h3,h4,h5').css('backgroundColor', 'red');
+                $(':header').css('backgroundColor', 'red');//标题
+            });
+
+
+        });
+        </script>
+</head>
+<body>
+    <input type="button" name="name" value="按钮" id="btn1" />
+    <table border="1" id="t1">
+        <tr>
+            <td>姓名</td> 
+            <td>成绩</td>
+            <td>姓名</td>
+            <td>成绩</td>
+        </tr>
+
+        <tr>
+            <td>曹操</td>
+            <td>85</td>
+            <td>姓名</td>
+            <td>成绩</td>
+        </tr>
+
+        <tr>
+            <td>吕布</td>
+            <td>90</td>
+            <td>姓名</td>
+            <td>成绩</td>
+        </tr>
+        <tr>
+            <td>赵云</td>
+            <td>95</td>
+            <td>姓名</td>
+            <td>成绩</td>
+        </tr>
+
+        <tr>
+            <td>甄姬</td>
+            <td>98</td>
+            <td>姓名</td>
+            <td>成绩</td>
+        </tr>
+        <tr>
+            <td>小乔</td>
+            <td>75</td>
+            <td>姓名</td>
+            <td>成绩</td>
+        </tr>
+
+        <tr>
+            <td>亚瑟</td>
+            <td>88</td>
+            <td>姓名</td>
+            <td>成绩</td>
+        </tr>
+
+        <tr>
+            <td>花木兰</td>
+            <td>99</td>
+            <td>姓名</td>
+            <td>成绩</td>
+        </tr>
+
+        <tr>
+            <td>韩欣</td>
+            <td>80</td>
+            <td>姓名</td>
+            <td>成绩</td>
+        </tr>
+      
+
+    </table>
+
+</body>
+</html>

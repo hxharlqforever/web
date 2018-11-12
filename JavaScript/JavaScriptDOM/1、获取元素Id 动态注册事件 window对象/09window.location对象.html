@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('btn1').onclick = function () {
+                window.location.href = 'http://www.google.com';
+            }
+
+            document.getElementById('btn2').onclick = function () {
+                //alert(window.location.href);//获取当前网址
+                //alert(window.location.hostname);
+                //alert(window.location.protocol);
+
+                //遍历location中的所有方法
+                for (var key in location) {
+                    alert(key+'                                          '+location[key]);
+
+                }
+
+            }
+
+            document.getElementById('btn3').onclick = function () {
+                window.location.reload();//杀心当前页面
+            }
+        }
+
+        //为当前页面注册一个关闭之前事件
+        window.onbeforeunload = function () {
+            return '确认关闭？';
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="button" id="btn1" />
+    <input type="button" name="name" value="当前网址" id="btn2" />
+    <input type="button" name="name" value="刷新" id="btn3" />
+  
+</body>
+</html>

@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    
+    <style>
+        /*z-index越大，界面越在外层
+            使用z-index,需要设置position：absolute，z-index大的在上面。
+            */
+        #dv1 {
+           
+            width: 100px;
+            height:100px;
+            background-color:blue;
+            position:absolute;
+            left:100px;
+            top:100px;
+            z-index:100;
+           
+        }
+
+        #dv2 {
+            width: 100px;
+            height: 100px;
+            border:1px solid red;
+            background-color: green;
+            position: absolute;
+            left: 120px;
+            top: 120px;
+            z-index:101
+        }
+
+        #dv3 {
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            background-color: red;
+            position: absolute;
+            left: 140px;
+            top: 140px;
+        }
+
+        
+        </style>
+
+</head > 
+     <body >
+         <div id="dv1">
+           
+         </div>
+         <div id="dv2">
+             
+         </div>
+         <div id="dv3">
+            
+
+         </div>
+
+     </body > 
+</html >
+        

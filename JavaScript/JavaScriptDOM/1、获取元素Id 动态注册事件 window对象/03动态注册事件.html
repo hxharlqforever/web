@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('btn1').onclick = function () {
+                alert('按钮1被点击了！');
+            }
+
+            document.getElementById('btn2').onclick = function () {
+
+                alert('按钮2');
+                
+                //改变按钮1的单机事件的处理程序
+                document.getElementById('btn1').onclick = fnClick;//这里是个事件，fnClick不需要括号
+                //document.getElementById('btn1').onclick = fnClick（）;这样的话是将fnClick的返回值赋值给onCLick事件，为undefined 这样写其实并无意义
+            }
+
+            document.getElementById('btn3').onclick = showDateNow;//注意，这里不要用括号，切记是“事件”！！
+        }
+
+        function fnClick() {
+            alert('wo gaibianleshijie');
+        }
+
+        function showDateNow() {
+            alert(new Date().toLocaleString());
+            alert(new Date().toLocaleTimeString());
+        }
+
+    </script>
+</head>
+<body>
+    <input id="btn1" type="button" name="name" value="button" />
+    <input id="btn2" type="button" name="name" value="按钮2" />
+
+    <input id="btn3" type="button" name="name" value="按钮3" />
+
+  
+
+</body>
+</html>

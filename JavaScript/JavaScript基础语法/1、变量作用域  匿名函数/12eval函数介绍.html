@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        var n = 'var x=1;x++;alert(x);';
+        alert(n);//原样输出var x=1;x++;alert(x);
+
+        eval(n);//将字符串当做JS代码来执行
+        x++;
+        alert(x);//3
+    </script>
+</head>
+<body>
+
+</body>
+</html>

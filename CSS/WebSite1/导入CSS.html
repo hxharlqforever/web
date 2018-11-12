@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="CSS/StyleSheet.css" rel="stylesheet" />
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td>姓名</td>
+            <td><input name="txtName" type="text" value="张三" size="50" maxlength="5" /></td><!--value为默认值-->
+        </tr>
+
+        <tr>
+            <td>邮箱</td>
+            <td><input name="txtEmail" type="text" /></td>
+        </tr>
+
+        <tr>
+            <td>密码</td>
+            <td><input name="txtPassword" type="password" /></td>
+        </tr>
+
+        <tr>
+            <td>确认密码</td>
+            <td><input name="txtPassword" type="password" /></td>
+        </tr>
+
+        <tr>
+            <td>性别</td>
+            <td>
+                <input name="gender" id="*" type="radio" value="male" /><label for="*">男</label>
+                <input type="radio" name="gender" value="female">女
+            </td>
+        </tr>
+
+        <tr>
+            <td>兴趣爱好</td>
+            <td>
+                <input type="checkbox" name="habit" value="0" />运动
+                <input type="checkbox" name="habit" value="1" checked="checked" />读书 <!--checked:该行默认被选中-->
+                <input type="checkbox" name="habit" value="3" />书法
+                <input type="checkbox" name="habit" value="4" />唱歌
+                <input type="checkbox" name="habit" value="5" />跳舞
+            </td>
+        </tr>
+
+        <tr>
+            <td>地址</td>
+            <td>
+                省：
+                <select name="provence" multiple="multiple" size="6">
+                    <!--select:下拉菜单-->
+                    <option value="0">安徽</option>
+                    <option value="1">江苏</option>
+                    <option value="2">山东</option>
+                    <option value="3">浙江</option>
+                    <option value="4">河南</option>
+                    <option value="5">云南</option>
+
+                </select>
+                市：
+                <select name="city">
+                    <optgroup label="安徽">
+                        <!--optgroup分组-->
+                        <option value="02">阜阳</option>
+                        <option value="03">亳州</option>
+                        <option value="04">蚌埠</option>
+                        <option value="05">芜湖</option>
+                    </optgroup>
+                    <option value="00">无锡</option>
+                    <option value="01">杭州</option>
+
+                    <option value="06">青岛</option>
+                    <option value="07">昆明</option>
+                    <option value="08">郑州</option>
+                    <option value="09">南京</option>
+                </select>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" style="height:100px;">
+                <!--列合并-->
+                <fieldset>
+                    <legend>请选择比感兴趣的内容</legend>
+                    <input type="checkbox" name="habit" value="0" />操作系统
+                    <input type="checkbox" name="habit" value="1" />网络前端
+                    <input type="checkbox" name="habit" value="3" />数据库
+                    <input type="checkbox" name="habit" value="4" />移动开发
+                    <input type="checkbox" name="habit" value="5" />人工智能
+                </fieldset>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                请仔细阅读协议
+                <textarea cols="30" rows="10" readonly="readonly">
+                    <!--readonly属性同样适用其他标签，只读，不能更改-->
+                    请选择比感兴趣的内容
+                    请选择比感兴趣的内容
+                    请选择比感兴趣的内容
+                    请选择比感兴趣的内容
+                    请选择比感兴趣的内容
+                    请选择比感兴趣的内容
+                    请选择比感兴趣的内容
+                </textarea>
+            </td>
+            <!--disable禁用-->
+
+        </tr>
+        </table>
+
+</body>
+</html>

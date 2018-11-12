@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+
+        //var x = 100;
+        //function fn1() {
+        //    var y = 101;
+
+        //    alert(y);
+        //    alert(x);
+
+        //    return function () {//这就是闭包，函数内部可以访问外部
+        //        var y = 99;
+        //        alert(y);
+        //        alert(x);//100，   x外层定义
+        //            }
+
+        //}
+        //var fn2 = fn1();
+        //fn2();
+       
+
+
+
+
+        //function f1() {
+        //    var x = 100;
+        //    x++;
+        //    return function () {
+        //        alert(x);
+        //    }
+        //}
+
+        //var fn = f1();
+        //fn();
+
+
+
+
+
+
+        //-------------------------------------------------------------
+        //function Person(name) {
+        //    this.name = name;
+
+        //    //通过这种方式可以模拟私有成员
+        //    //类似于private成员
+        //    var uage = '24';
+
+        //    //类似于public成员
+        //    this.setAge = function (age) {
+        //        uage = age;
+        //    }
+
+        //    //类似于public成员
+        //    this.getAge = function () {
+        //        return uage;
+        //    }
+        //}
+        //var p1 = new Person('周瑜');
+        ////alert(p1.name);
+        //p1.setAge(100);
+        //alert(p1.getAge());
+
+
+
+        //======================================================================
+        function f1() {
+            //声明数组
+            var funs = new Array();
+            //循环，为数组赋值
+            for (var i = 0; i < 10; i++) {
+                funs[i] = function () {//
+                    alert(i);//要用i,但此层没有i,根据闭包概念，往外找，i为10
+                };
+            }
+            //返回
+            return funs;
+        }
+
+        var myFuns = f1();
+        //此时在调用时，上面函数已经结束，i为10
+        for (var n = 0; n < myFuns.length; n++) {
+            myFuns[n]();
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

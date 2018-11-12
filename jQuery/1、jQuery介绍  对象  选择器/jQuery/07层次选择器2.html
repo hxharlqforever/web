@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        //相邻元素，下一个$('div + p')   表示选择器1选取到的元素后面的一个元素必须是满足选择器2的元素
+        //相邻元素，下面多有的$('div ~ p')    选择器1选择的元素后的所有的‘兄弟’元素（同等级）
+
+
+        $(function () {
+            //$('div + p').css('color', 'red');//字体颜色为红色
+            //$('div + p').css('backgroundColor', 'red');//背景颜色为红色   div后的下一个p
+
+
+
+            //$('div ~ p').css('backgroundColor', 'red');//div后的所有p
+
+
+
+            //$('div + span').css('backgroundColor', 'red');//div的下一个是span,,在此无效果
+            //$('div').next('span');//等价于上面加号
+
+
+
+            //$('div ~ span').css('backgroundColor', 'red');//div后的所有span，同一级别，div下的不会设置
+            ////$('div').nextAll('span');//等同于上面波浪线，后面所有同级别的
+
+
+
+            ////上一个元素
+            //$('div').prev('span');//获取div上面的一个兄弟，并且该兄弟必须是span
+
+            //$('div').prevAll('span');//获取div上面的所有span兄弟
+
+            //$('div').prevAll();//不写表示所有的
+
+
+
+            //获取当前元素所有的span兄弟（上面和下面），不写表示上面和下面所有的
+            $('div').siblings('span').css('backgroundColor','red');
+
+
+        });
+
+    </script>
+</head>
+<body>
+
+    <span>这是一个span</span>
+    <div id="dv1">
+        春眠不觉晓
+    </div>
+
+    <p>
+        处处问题鸟
+    </p>
+    <p>
+        夜来风雨声
+    </p>
+    <p>
+        花落知多少
+    </p>
+
+
+    <span>这是一个span</span>
+    <span>这是一个span</span>
+    <span>这是一个span</span>
+    <div id="dv1">
+        <span>这是div下的span</span>
+    </div>
+
+</body>
+</html>

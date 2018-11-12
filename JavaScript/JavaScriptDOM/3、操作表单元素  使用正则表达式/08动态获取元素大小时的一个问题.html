@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style type="text/css">
+        #dv1 {
+            width: 300px;
+            height: 300px;
+            border: 1px solid blue;
+            background-color: pink;
+            padding:20px;
+            /*margin:20px;*/
+           
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('btn1').onclick = function () {
+                var dvObj = document.getElementById('dv1');
+                //获取总体的高度和宽度，包括边框和padding
+                //var h = dvObj.offsetHeight;
+                //var w = dvObj.offsetWidth;
+
+                ////获取当前dv的宽和高，不包括边框等---------只兼容IE
+                //var h = dvObj.currentStyle.height;
+                //var w = dvObj.currentStyle.width;
+
+                ////获取当前dv的宽和高，不包括边框等---------兼容所有,包括FF
+                var h = window.getComputedStyle(dvObj, null).height;
+                var w = window.getComputedStyle(dvObj, null).width;
+                alert(h+','+w);
+            };
+        };
+    </script>
+
+</head>
+<body>
+    <input type="button" name="name" value="button" id="btn1" />
+    <div id="dv1">
+
+    </div>
+
+</body>
+</html>

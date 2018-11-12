@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+    <script type="text/javascript">
+        var dict = {
+            '百度': 'http://www/baidu.com',
+            '新浪': 'http://www.sina.com.cn',
+            '谷歌':'http://www.g.com'
+        }
+
+        //动态创建表格
+
+        window.onload = function () {
+            //注册单击事件
+            document.getElementById('btn1').onclick = function () {
+                //动态创建表格
+                var tableWeb = document.createElement('table');//注意括号里要有引号
+                tableWeb.border = '1';
+
+                //遍历数据，动态添加行
+                for (var key in dict) {
+                    //创建行对象
+                    var trObj = document.createElement('tr');
+                    //创建列
+                    var td1 = document.createElement('td');
+                    td1.innerHTML = key;
+                    var td2 = document.createElement('td');
+                    td2.innerHTML = '<a href="'+dict[key]+'">'+key+'</a>';
+
+
+                    //把列加入到行中
+                    trObj.appendChild(td1);
+                    trObj.appendChild(td2);
+                    //把行加入到表格中
+                    tableWeb.appendChild(trObj);//注意，在这里要使用已经定义的变量
+
+                }
+
+                //把表格添加进body中
+                document.body.appendChild(tableWeb);
+            };
+        };
+      
+    </script>
+
+</head>
+<body>
+    <input type="button" name="name" value="动态生成表格对象" id="btn1" />
+
+</body>
+</html>

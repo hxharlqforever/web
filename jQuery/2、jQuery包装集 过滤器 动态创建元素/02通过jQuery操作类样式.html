@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="jQuery/jquery-3.3.1.js"></script>
+
+    <script type="text/javascript">
+        
+        $(function () {//ready函数
+            $('#btn1').click(function () {
+              
+               // $('body').addClass('night');  //addClass：追加一个新样式，不会覆盖之前的
+                //------------------------------------------------------------
+                ////判断一个元素是否应用了某个样式
+                //if ($('body').hasClass('night')) {
+                //    //移除该样式
+                //    $('body').removeClass('night');
+                //} else {
+                //    $('body').addClass('night');
+                //}
+                ////-----------------------------------------------------------------
+
+                $('body').toggleClass('night'); //切换类样式，添加和移除
+            });
+           
+
+        });
+    </script>
+    <style>
+        .night {
+        background-color:black;
+        }
+
+    </style>
+
+</head>
+<body>
+    <input type="button" name="name" value="按钮" id="btn1" />
+</body>
+</html>

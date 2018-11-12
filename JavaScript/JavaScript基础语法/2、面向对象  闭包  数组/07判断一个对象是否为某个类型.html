@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        function Person(name, age, sex) {
+          
+        }
+
+
+        var p = new Person();
+
+        //通过    对象 instanceof 类型（构造函数名称）   就可以判断一个对象是否为某个类型
+        //类似于C#中用is判断，，if(p is Person)
+        //alert(p instanceof Person);
+        //alert(p instanceof Date);
+        //alert(p instanceof Object);
+
+
+
+        //理论上通过object创建对象可以，实际不采用（对象都是同一类型）
+        //var o = new Object();
+        //o.sayHi = function () {
+
+        //};//这是一个匿名函数，括号后加分号
+        //o.name='lf'
+
+
+
+
+        //-------------------------------------------------------------------------------------
+        function Person(name, age, sex) {
+
+        }
+        
+        function Student(name, age, sex) {
+
+        }
+        
+
+        function Teacher(name, age, sex) {
+
+        }
+
+        var p1 = new Person();
+        var p2 = new Student();
+        var p3 = new Teacher();
+
+        //alert(p1 instanceof Person);
+        //alert(p2 instanceof Student);
+        //alert(p3 instanceof Teacher);
+
+       
+        alert(p3 instanceof Person);//false
+        alert(p3 instanceof Student);//false
+        alert(p3 instanceof Teacher);//true
+
+
+        //-----------------------通过对象字面量来直接创建对象。类似于字面量创建键值对集合-------------------------------------------
+        var p1 = {
+            name:'hx',
+            age: 24,
+            sex: '男',
+            sayHello: function () {
+                alert('大家好，我叫' + this.name);
+            }
+        };
+        p1.sayHello();
+        //好处：方便快捷，便于封装数据
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById('btn1').onclick = function () {
+                //获取文本框中输入内容
+                var $obj = $(document.getElementById('txt1'));
+                alert($obj.val());//从文本框获取值
+                $obj.val('啊哈哈哈哈');//为文本框设置值
+
+                ////设置文本框的css样式
+                //$obj.css('border', '1px solid blue');
+                //$obj.css('float','right');
+
+                //设置文本框多种样式
+                $obj.css({
+                    'border': '1px solid blue',
+                    'width': '20px',
+                    'height': '100px',
+                    'background-color':'green'
+                });
+
+                //设置超链接
+                var $alink = $(document.getElementById('a1'));
+                $alink.text('baidjedfke');//等价于innerText
+
+                //innerHTML
+                $obj.html();//等价于innerHTML
+            };
+        };
+
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="" id="btn1">
+    <input type="text" name="name" value="" id="txt1">
+    <a href="http://www.baudu.com" id="a1">百度</a>
+
+
+</body>
+</html>

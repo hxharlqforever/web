@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        //var name = 'Jack';
+        //function fnTest() {
+
+        //}
+        //window.txt1;
+
+        //直接写在这里是有问题的，因为程序代码是从上到下依次执行的，当执行到下面这句话的时候，页面上的元素还没有执行，所以还没有txt1或者btn1这些元素，所以document.getElementById('txt1')返回的值是null
+
+        ////如果把下面的这两句话放到页面加载完毕事件中执行，则不会有问题
+        //document.getElementById('txt1').value = '你好，世界';
+        //document.getElementById('btn1').value = '这是一个按钮button';
+
+
+        //为window.onload时间注册一个事件处理程序
+        //当执行该事件的时候，页面上所有的元素都加载完毕了。
+        window.onload = function () {//这样就没有问题了
+            document.getElementById('txt1').value = '你好，世界';
+            document.getElementById('btn1').value = '这是一个按钮button';
+        }
+
+
+    </script>
+</head>
+<body>
+    <form id="form1" action="/" method="get">
+        <input id="txt1" type="text" name="name" value="" />
+
+        <input id="btn1" type="button" name="name" value="button" />
+    </form>
+
+    <script type="text/javascript">
+        ////window.txt1.value = 'Hello World!';//直接设置值
+        ////window.btn1.value = '按钮';
+
+
+        ////window.form1.txt1.value = 'Hello World!';
+        ////window.form1.btn1.value = '按钮';
+
+
+        ////以后如果要通过元素Id获取元素，一定要使用document.getElementById()的方式来获取，不要直接使用window.id的方式来获取
+        //document.getElementById('txt1').value = '年后，世界';
+        //document.getElementById('btn1').value = '这是一个按钮';
+
+
+
+    </script>
+
+
+</body>
+</html>

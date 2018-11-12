@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script>
+        window.onload = function () {
+            document.getElementById('btn1').onclick = function () {
+
+                //在事件处理程序中，当前事件是哪个对象的事件，那么this表示的就是哪个对象、
+                //在当前的按钮的单击事件中，this表示的是btn1这个按钮
+                //alert(this.value+this.name+this.type);
+
+                //在事件处理函数中使用window.event.srcelement，看起来和直接使用this差不多，但事实上二者是不相同的
+
+                alert(window.event.srcElement.value + window.event.srcElement.name + window.event.srcElement.type);
+
+
+                alert(this+'                       '+window.event.srcElement);
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="button" id="btn1" />
+
+</body>
+</html>

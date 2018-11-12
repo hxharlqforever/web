@@ -1,0 +1,1 @@
+﻿document.write('fwejfhwekfsdfnesudfberkjfevfudkhsgvrejkgjergvjerouwghndjk,黄河入海流');

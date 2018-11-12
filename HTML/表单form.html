@@ -1,0 +1,187 @@
+﻿<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8"><!--描述网页的相关信息-->
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>表单form</title><!--采集用户输入数据-->
+ </head>
+ <body>
+	<form action="http://www.baidu.com/a.aspx" method="get">      
+		<input name="user_id" type="hidden" value="1001"/>
+		<!--
+			input是主要的表单元素，type的可选值：
+				submit：提交按钮
+				button：普通按钮
+				checkbox：复选框
+				file：文件选择框
+				hidden：隐藏字段
+				image：图片按钮
+				password:密码框（隐藏密码）
+				radio：单选按钮
+				reset：重置按钮
+				text：文本框
+		-->
+	<!--表格必须放在form表单中,action:指定提交对象，method：提交方式（get/post）-->
+
+	<!--
+			--所有元素都可以有ID，并且每个元素的ID不可以相同
+
+			--只有表单元素才可以有name，并且name是可以重复的
+
+			--id属性的目的是为了可以在客户端，通过JavaScript语言来操作某个元素
+
+			--name属性的目的是为了可以将数据提交到服务器。
+	-->
+
+	<!--表单提交的是表单元素的value中的内容-->
+
+	<!--
+		get方式提交：
+			是把数据封装成使用&连接起来的键值对的方式，通过浏览器地址栏，提交到服务器的。因为请求的地址是有限的，所以不能通过get方式上传文件。因为get提交的数据都会直接显示在地址栏中，所以相对不安全。
+		post方式提交：
+			默认情况下post方式提交也是使用& 把键值对连接起来。同时提交的内容没有在URL中显示，相对安全。post可以上传文件。
+		目前安全网站浏览，采用https://....
+	-->
+
+
+		<table border="1">
+			<tr>
+				<td>姓名</td>
+				<td><input name="txtName" type="text" value="张三" size="50" maxlength="5"/></td><!--value为默认值-->
+			</tr>
+
+			<tr>
+				<td>邮箱</td>
+				<td><input name="txtEmail" type="text"/></td>
+			</tr>
+
+			<tr>
+				<td>密码</td>
+				<td><input name="txtPassword" type="password"/></td>
+			</tr>
+
+			<tr>
+				<td>确认密码</td>
+				<td><input name="txtPassword" type="password"/></td>
+			</tr>
+
+			<tr>
+				<td>性别</td>
+				<td> 
+					<input name="gender" id="*" type="radio" value="male"/><label for="*">男</label> 
+					<input type="radio"name="gender"value="female">女 
+				</td>
+			</tr>
+
+			<tr>
+				<td>兴趣爱好</td>
+				<td> 
+					<input type="checkbox" name="habit" value="0"/>运动 
+					<input type="checkbox" name="habit" value="1" checked="checked"/>读书 <!--checked:该行默认被选中-->
+					<input type="checkbox" name="habit" value="3"/>书法
+					<input type="checkbox" name="habit" value="4"/>唱歌
+					<input type="checkbox" name="habit" value="5"/>跳舞
+				</td>
+			</tr>
+
+			<tr>
+				<td>地址</td>
+				<td> 
+					省：
+					 <select name="provence" multiple="multiple"  size="6"><!--select:下拉菜单-->
+						<option value="0">安徽</option>
+						<option value="1">江苏</option>
+						<option value="2">山东</option>
+						<option value="3">浙江</option>
+						<option value="4">河南</option>
+						<option value="5">云南</option>
+						
+					 </select>
+					市：
+					<select name="city">
+					  <optgroup label="安徽"><!--optgroup分组-->
+						<option value="02">阜阳</option>
+					    <option value="03">亳州</option>
+					    <option value="04">蚌埠</option>
+					    <option value="05">芜湖</option>
+					  </optgroup>
+					    <option value="00">无锡</option>
+					    <option value="01">杭州</option>
+					    
+					    <option value="06">青岛</option>
+					    <option value="07">昆明</option>
+					    <option value="08">郑州</option>
+					    <option value="09">南京</option>
+					 </select>
+					
+				</td>
+			</tr>
+
+			<tr>
+			  <td colspan="2" style="height:100px;"><!--列合并-->
+				<fieldset>
+					<legend>请选择比感兴趣的内容</legend>
+					<input type="checkbox" name="habit" value="0"/>操作系统 
+					<input type="checkbox" name="habit" value="1"/>网络前端
+					<input type="checkbox" name="habit" value="3"/>数据库
+					<input type="checkbox" name="habit" value="4"/>移动开发
+					<input type="checkbox" name="habit" value="5"/>人工智能
+			    </fieldset>
+				</td>
+			</tr>
+
+			<tr>
+				<td colspan="2">请仔细阅读协议
+					<textarea cols="30" rows="10" readonly="readonly"><!--readonly属性同样适用其他标签，只读，不能更改-->
+						请选择比感兴趣的内容
+						请选择比感兴趣的内容
+						请选择比感兴趣的内容
+						请选择比感兴趣的内容
+						请选择比感兴趣的内容
+						请选择比感兴趣的内容
+						请选择比感兴趣的内容
+					</textarea>
+				</td>
+				<!--disable禁用-->
+				
+			</tr>
+
+			<tr>
+				<td colspan="2">请选择头像：
+					<input type="image">
+				</td>
+				
+				<!--disable禁用-->
+				
+			</tr>
+			<tr>
+				<td >
+					<input type="file"/><!--文件选择-->
+				</td>
+			</tr>
+
+			<tr>
+				
+				<td>
+					<input type="submit" value="注册"/>  <!--提交-->
+					<input type="reset" value="重置"/>  <!--提交-->
+					<input type="image" value="提交" src="**图片路径"/>  <!--提交-->
+				</td>
+				<!--disable禁用-->
+				
+			</tr>
+
+		<marquee direction="right" scrolldelay="60" behavior="alternate">
+		<img width="300" height="380" src="img-72d5ed644efb904bf92fcd78fa78f716.jpg"/>
+		</marquee><!--图片浮动-->
+			
+		</table>
+
+
+		<!--嵌入音乐和flash，简易代码生成器生成代码-->
+   </form>
+ </body>
+</html>

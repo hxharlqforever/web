@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="jQuery/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            ////选取所有input元素中name属性为name1的元素
+            //$('input[name=name1]').css('backgroundColor', 'red');
+
+            ////选取所有input元素中name属性为name1的元素
+            //$('input[name]').css('backgroundColor', 'green');
+
+            //选取body下面所有元素中有name属性的元素
+            //$('body *[name]').css('backgroundColor', 'green');
+            //$('body [name]').css('backgroundColor', 'green');//不加*号也行
+
+            //选取body下面所有元素中name属性为name1的元素
+            // $('body *[name=name1]').css('backgroundColor', 'green');//
+
+            ////选取body下面所有元素中name属性值以a开头的元素
+            //$('body *[name^=a]').css('backgroundColor', 'green');//使用正则表达式，^表示开头
+
+            //$('body *[name=]').css('backgroundColor', 'green');////存在问题，并不能显示name为空的
+
+            ////选取以a结尾的
+            //$('body *[name$=a]').css('backgroundColor', 'green');//使用正则表达式，$表示结尾
+
+            ////name属性中包含a的
+            //$('body *[name*=a]').css('backgroundColor', 'green');
+
+            //name属性中不包含itcast的
+            //$('body *[name!=itcast]').css('backgroundColor', 'green');
+
+            //同时具有多个属性的
+            $('body *[name][id][value]').css('backgroundColor', 'green');
+
+
+
+
+        });
+         
+    </script>
+</head>
+<body>
+    <input type="text" name="name1" value="" id=""/>
+    <input type="text" name="name1" value="" />
+
+    <input type="text" name="aname2a" value="" />
+    <input type="text" name="aname3a" value="" />
+    <input type="text" name="itcast" value="" />
+    <input type="text" value="" />
+    <input type="text" name=""  value="" />
+    <input type="text" name="" value="" />
+    <input type="text" value="" />
+    <textarea name="">
+
+    </textarea>
+    <textarea name="name1"></textarea>
+    <input type="text" name="afdsgferdvdfbrfbr" value="" />
+  
+
+
+</body>
+</html>

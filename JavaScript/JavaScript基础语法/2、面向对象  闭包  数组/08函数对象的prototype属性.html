@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+    <script type="text/javascript">
+        function Person(name, age, sex) {
+            this.name = name;//this就是代指下面的对象p1
+            this.age = age;
+            this.sex = sex;
+
+            this.sayHello = function () {
+                alert('大家好，我叫' + this.name+'今年'+this.age+'岁了');
+            }
+            this.sayHi = function () {
+                alert('Hi');
+            }
+        }
+        //每次通过Person()创建爱你的对象，都是一个完全独立的对象，对象和对象之间是没有关系的，类似于C#中的对象
+        var p1 = new Person('孙静', 24, '女')
+
+        var p2 = new Person('黄旭', 24, '男')
+
+        p1.sayHello();
+
+        p2.sayHello();
+
+        alert('---------------------------------------------------------------------');
+
+        p1.name = '刘胡兰';
+        p1.age = 35;
+        p1.sex = '女';
+
+        p1.sayHello();
+
+        p2.sayHello();
+
+       
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

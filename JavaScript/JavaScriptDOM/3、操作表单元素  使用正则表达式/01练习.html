@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        #p1 {
+        width:500px;
+        height:30px;
+        border:1px solid blue;
+        }
+    </style>
+    <script>
+        //为每个checkbox注册一个单击事件
+        window.onload = function () {
+            //获取所有的checkbox
+            var chs = document.getElementById('dv1').getElementsByTagName('input');
+            for (var i = 0; i < chs.length; i++) {
+                //为每个CheckBox注册单击事件
+                chs[i].onclick = function () {
+                    //获取所有被选中的的checkbox，但是没有方法可以直接获取被选中的checkbox，所以只能一个个遍历
+                    var chsAll = document.getElementById('dv1').getElementsByTagName('input');
+                    var ched = [];//所有被选中的checkbox放到该数组中
+                    for (var j = 0; j < chsAll.length; j++) {
+                        if (chsAll[j].checked) {
+                            ched[ched.length] = chsAll[j].value;
+                        }
+                    }
+                    //获取个数，并显示值
+                    document.getElementById('p1').innerHTML = '共选中了' + ched.length + '项，分别是：' + ched.toString();
+                };
+
+            }
+        };
+
+    </script>
+</head>
+<body>
+    <div id="dv1">
+        <input type="checkbox" name="name" value="Tom" />Tom
+        <input type="checkbox" name="name" value="Jack" />Jack
+        <input type="checkbox" name="name" value="Lilei" />Lilei
+        <input type="checkbox" name="name" value="Dadong" />Dadong
+    </div>
+    <p id="p1">
+        
+    </p>
+
+</body>
+</html>

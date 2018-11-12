@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="jQuery/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        //window.onload = function () {
+        
+        //}
+        $(function () {
+            ////判断选择器选择到的元素集合的的length
+            //alert($('#btn').length);
+            ////即便是选择器没有选择到任何元素，那么返回的也不是null或者是undefined,而是一个长度为0的集合对象，所以不会报错
+            //$('#btn1').click(function () {
+            //    alert('Hello World');
+            //});
+
+            if ($('#btn').length > 0) {
+                alert('页面上存在该元素');
+            } else {
+                alert('不存在该元素');
+            }
+            
+            ////本身jQuery对象就是一个DOM的集合，所以可以直接通过索引访问其中的任何一个对象，并且返回的就是DOM对象
+            //$('#btn1')[0]
+            //$('btn1').get[0]
+
+
+
+            $('#id').length>0  //用途：可以判断页面上某个元素是否存在，如果存在则不在重新创建，如果不存在则创建一个新的并显示（创建动态元素时使用）
+
+
+
+
+        });
+        
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="按钮" id="btn1"/>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="jQuery/jquery-3.3.1.js"></script>
+    <script>
+        $(function () {
+            //为每个checkbox注册单击事件
+            $('input[type=checkbox]').click(function () {
+                //1、获取当前所有被选中的checkbox
+                var ch = $('input[type=checkbox]:checked');
+                //2、获取个数
+                var n = ch.length;
+                //3、获取每个checkbox的value,,
+                //只能遍历，把每一个checkbox的value放到一个数组中
+                var names = [];
+                $.each(ch, function(k, chobj) {
+                   names[names.length]= $(chobj).val();
+                });
+                //4、把个数显示到p中
+                $('#p1').text('共选中了' + n + '项，分别是'+ names.toString());//分别是，，值显示不出来？？？！！！
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="checkbox" name="name" value="" />Tom
+    <input type="checkbox" name="name" value="" />Jim
+    <input type="checkbox" name="name" value="" />Lilei
+    <p id="p1"></p>
+
+</body>
+</html>

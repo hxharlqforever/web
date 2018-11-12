@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        td {
+            font: 20px 宋体;
+            width: 80px;
+            background-color: white;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            //为文本框注册一个键盘按下后弹起的事件
+            document.getElementById('txtPwd').onkeyup = function () {
+                var tds = document.getElementById('tbl1').getElementsByTagName('td');
+                //初始化颜色
+                for (var i = 0; i < tds.length; i++) {
+                    tds[i].style.backgroundColor = '';
+                }
+
+                //1、获取用户输入的内容
+                var pwd = this.value;
+                if (pwd.length > 0) {
+                    //2、根据用户输入的密码，校验长度
+                    var pwdLevel = getPasswordLevel(pwd);
+                    //3、根据密码强度，设置显示强度等级
+                    switch (pwdLevel) {
+                        case 0:
+                        case 1:
+                        case 2:
+                            //弱
+                            tds[0].style.backgroundColor = 'red';
+                            break;
+                        case 3:
+                        case 4:
+                            //中
+                            tds[0].style.backgroundColor = 'orange';
+                            tds[1].style.backgroundColor = 'orange';
+
+                            break;
+                        case 5:
+                            //强
+                            tds[0].style.backgroundColor = 'green';
+                            tds[1].style.backgroundColor = 'green';
+                            tds[2].style.backgroundColor = 'green';
+                            break;
+                    }
+                }
+            };
+        };
+
+        //定义函数，计算密码强度
+        function getPasswordLevel(upwd) {
+            var lvl = 0;
+            //1、如果密码中包含数字，则强度加1
+            if (upwd.match(/\d+/)) {
+                lvl++;
+            }
+            //2、如果密码中包含小写字母，则强度加1
+            if (upwd.match(/[a-z]+/)) {
+                lvl++;
+            }
+            //3、如果密码中包含大写字母，则强度加1
+            if (upwd.match(/[A-Z]+/)) {
+                lvl++;
+            }
+            //4、如果密码中包含特殊符号，则强度加1
+            if (upwd.match(/^[0-9a-zA-Z]+/)) {
+                lvl++;
+            }
+            //5、如果密码长度超过6位，则强度加1
+            if (upwd.length > 6) {
+                lvl++;
+            }
+            return lvl;//返回密码强度 计算值
+        }
+    </script>
+</head>
+<body>
+    请输入密码：<input type="text" name="name" id="txtPwd">
+    <table id="tbl1" border="1" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                弱
+            </td>
+            <td>
+                中
+            </td>
+            <td>
+                强
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

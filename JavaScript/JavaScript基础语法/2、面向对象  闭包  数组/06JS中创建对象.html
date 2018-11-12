@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+    <script type="text/javascript">
+        ////这是一个函数也恶意叫做“函数对象”
+        //function Person() {
+        //}
+        ////第一种方式
+        ////对于Person可以直接调用直接调用就是把Person当成一个函数来使用
+        ////Person();
+
+        ////第二种方式：把Person当成“类”来使用，通过Person函数来创建一个Person类型的对象
+        ////当调用Person函数前加new关键字，表示要通过Person()函数创建一个对象，此时，一般把Person()函数称为“构造函数”。也就是说，的那个直接调用一个函数的时候那么叫函数，当通过new关键字调用一个函数的时候，这个函数叫“构造函数”，不叫类。
+        //var p = new Person();//这样就创建了一个person类型的对象
+
+        ////当定义一个函数的时候，如果要将该函数作为“构造函数”来使用那么函数名就应该使用“帕斯卡”命名法（每个单词的字母都大写）。
+        ////如果定义函数的时候，就确定该函数将来只会作为一个普通函数来调用，那么就使用“驼峰命名法”
+
+        //function Person() {
+
+        //}
+        //var p = new Person();
+        //p.name = '黄旭';
+        //p.age = '24';
+        //p.sex = '男';
+
+        //p.sayHi =function(){
+        // alert('大家好，我叫'+this.name)
+        //};
+
+        //p.sayHi();
+
+
+
+        //----------------------------------------------------------------------------------------------------------
+        //通过构造函数创建person对象
+        function Person(name, age, sex) {
+            this.name = name;//this就是代指下面的对象p1
+            this.age = age;
+            this.sex = sex;
+
+            this.sayHello = function () {
+                alert('大家好，我叫' + this.name);
+            }
+        }
+        //对象也可以看做是键值对集合，所以对象也可以进行遍历
+        var p1 = new Person('孙静', 24, '女')
+        // p1.sayHello();
+        alert(p1.name);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

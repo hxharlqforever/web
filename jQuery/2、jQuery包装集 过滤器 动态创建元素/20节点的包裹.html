@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="jQuery/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#btn1').click(function () {//id选择器中，一定要加“#”
+                //包裹到元素外部
+                $('p').wrap('<font color="blue"></font>');
+
+
+                //包裹到元素外部
+                //$('p').wrapInner('<font color="red"></font>');
+
+
+                //包裹全部元素
+                //$('p').wrapAll('<font color="blue"></font>');
+            });
+        });
+
+        //获取样式：attr('class')
+        //设置样式：attr('class','myclass')
+        //移除样式：removeClass('myclass')
+        //追加样式：addClass('myclass')
+        //切换样式：toggleClass('myclass')//如果存在则去掉样式，如果没有则添加样式
+        //判断是否存在样式：hasClass('myclass')
+
+     
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="包裹" id="btn1" />
+    <p>
+        11111111111111111111111
+    </p>
+  
+    <p>
+        11111111111111111111111
+    </p>
+
+
+    <p>
+        11111111111111111111111
+    </p>
+    <p>
+        11111111111111111111111
+    </p>
+
+    <p>
+        11111111111111111111111
+    </p>
+
+</body>
+</html>

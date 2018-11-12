@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="jQuery/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        var sec = 4;
+        $(function () {
+            var intervalId = setInterval(function () {
+                if (sec > 0) {
+                    $('#btn1').val('请仔细阅读协议（' + sec + '）');
+                    sec--;//减一
+                } else {
+                    $('#btn1').val('同意').prop('disabled', false);//设置显示为‘同意’，并设置按钮可用
+                    //注意，这里要使用布尔类型的，因为字符串类型依然表示true
+                    //停止计时器
+                    clearInterval(intervalId);
+                }
+            }, 1000);
+        });
+
+    </script>
+</head>
+<body>
+    <input type="button" name="name" value="请仔细阅读协议（5）" disabled="disabled" id="btn1"/>
+</body>
+</html>

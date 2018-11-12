@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        //var uname = '赵宇星';
+        
+        //function showName() {
+        //    alert(this.uname);
+        //}
+        ////showName();//赵宇星
+
+        //function Person() {
+        //    this.uname = '熊丽';
+        //}
+        //var p = new Person();
+
+        //p.show = showName;
+        //p.show();
+
+
+        var uname = '高俊阳';
+
+        function showName(x,y,z) {
+            alert(this.uname);
+            alert(x+y+z);
+        }
+        //showName();
+
+        var p = { uname: '刘亚龙' };
+        var p1 = { uname: '朱维凯' };
+
+        showName.apply(p,[50,60,70]);//apply的用法，用对象p 来代替上面的（window对象）this    刘亚龙
+        //showName.apply(p1);//apply的用法，用p1 来代替上面的this   朱维凯
+        //showName.apply(window);//apply的用法，用pwindow来代替上面的this    高俊阳
+
+        showName.call(p, 50, 60, 70);//call与apply功能相同，区别就在于后面一个用数组，一个用逗号隔开
+    </script>
+</head>
+<body>
+
+</body>
+</html>

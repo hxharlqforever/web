@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+        #dvDetail {
+        background-color:green;
+        width:120px;
+        display:none;
+        }
+
+    </style>
+    <script>
+        window.onload = function () {
+            document.getElementById('a1').onmouseover = function () {
+                //获取行对象
+                var dvObj = document.getElementById('dvDetail');
+                //让层显示
+                dvObj.style.display = 'block';//
+                dvObj.style.position = 'absolute';
+                dvObj.style.left = this.offsetLeft + 'px';
+                dvObj.style.top = this.offsetTop + this.offsetHeight + 'px';
+            };
+
+            document.getElementById('a1').onmouseout = function () {
+                var dvObj = document.getElementById('dvDetail');
+                //this.style.display = 'none';//这样会把超链接自身隐藏掉注意this的用法，在这里this指的是‘a1’
+                dvObj.style.display='none'
+            };
+        };
+    </script>
+</head>
+<body>
+    <p>bairiyisahnjin</p>
+    <p>bairiyisahnjin</p>
+    <p>bairiyisahnjin</p>
+    北京传智播客创始人<a id="a1" href="http://net.itcast.cn">杨中科</a>。如鹏网
+    <div id="dvDetail">
+        <p>
+            姓名：杨中科
+        </p>
+        <p>
+            性别：男
+        </p>
+        <p>
+            姓名：杨中科
+        </p>
+        <img src="猫猫.jpg" alt="Alternate Text"><!--图片为何总是不显示？？？-->
+
+
+    </div>
+
+</body>
+</html>

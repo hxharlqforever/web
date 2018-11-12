@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+        //var n1 = '123';
+        //var n2 = 123;
+        //alert(n1 == n2);//true
+        //alert(n1 === n2);//false
+        var n1 = null;
+        var n2 ;
+        alert(n1 == n2);//true  当使用双等号判断时，认为null与undefined相等
+        alert(n1 === n2);//false
+
+        var s = 123;
+        switch (s) {
+            case '123':
+                alert('等于字符串123');
+                break;
+            case 123:
+                alert('等于数字123');
+                break;
+            default:
+                alert('没有找到相等的');
+                break;
+                //输出数字123，说明switch内部使用的也是===恒等于来判断是否相等，否则在第一种情况下就应该输出字符串123
+
+        }
+
+        </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+    <script type="text/javascript">
+        function Person(name, age, sex) {
+            this.name = name;//this就是代指下面的对象p1
+            this.age = age;
+            this.sex = sex; 
+        }
+        //在Person的原型对象中加一个sayHello方法
+        Person.prototype.sayHello = function () {
+            alert('大家好，我叫' + this.name + '今年' + this.age + '岁了');
+        }
+        this.sayHi = function () {
+            alert('Hi');
+        }
+
+        var p1 = new Person('孙静', 24, '女')
+
+        var p2 = new Person('黄旭', 24, '男')
+
+        p1.sayHello();
+
+        p2.sayHello();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

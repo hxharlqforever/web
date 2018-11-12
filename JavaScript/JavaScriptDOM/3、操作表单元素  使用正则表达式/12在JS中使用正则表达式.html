@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+
+        //test方法用来判断字符串是否匹配正则表达式
+
+
+        window.onload = function () {
+            //测试邮政编码
+            //document.getElementById('btn1').onclick = function () {
+            //    //1、获取用户输入
+            //    var post = document.getElementById('txt1').value;
+            //    //2、验证是否是合法的邮政编码
+            //    //使用正则表达式验证：
+            //    //2.1、创建一个正则表达式
+            //    var regpost = /^[0-9]{6}$/;//元字符含义：开始，0~9之间的数字，6位，结束
+            //    //2.2通过调用真这个表达式对象的test()方法，来测试是否匹配
+            //    var isok = regpost.test(post);
+            //    //alert('isok');//注意，不加引号
+            //    alert(isok);
+
+            //};
+
+            //测试邮箱
+            document.getElementById('btn2').onclick = function () {
+                //1、获取用户输入
+                var email = document.getElementById('txt1').value;
+                //2、验证是否是合法的邮政编码
+                //使用正则表达式验证：
+                //2.1、创建一个正则表达式
+                var regemail = /^\w+@\w+(\.\w+)+$/;//元字符含义：开始，出现一次或多次，...结束
+                //2.2通过调用这个表达式对象的test()方法，来测试是否匹配
+                var isok = regemail.test(email);
+                //alert('isok');//注意，不加引号
+                alert(isok);
+
+            };
+        };
+
+    </script>
+</head>
+<body>
+    <input type="text" name="name" value="" id="txt1"/>
+    <input type="button" name="name" value="测试是否设合法的邮政编码" id="btn1"/>
+    <input type="button" name="name" value="测试是否设合法的邮箱" id="btn2" />
+
+</body>
+</html>

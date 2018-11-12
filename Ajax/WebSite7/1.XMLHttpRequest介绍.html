@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+        h3 {
+            font-size:28px;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <h3>XMLHttpRequest</h3>
+    <script>        //利用JS自定义一个请求
+
+        //浏览器內建对象，用于在后台与服务器通信（交换数据），由此我们可以实现对网页的部分更新，而不是刷新真个页面
+        var xhr = new XMLHttpRequest;//基于HTTP协议实现通讯
+
+        console.log('xhr.onreadystatechange');
+
+        //设置请求头
+        xhr.open('get', '8-1.php');//（请求方式，请求地址）
+
+        //设置请求行
+        xhr.setRequestHeader('Content_type', 'application/x-www/form-urlencoded');
+
+        //设置请求主题
+        xhr.send('username=itcast&pass=123');
+
+        //接受服务器响应
+        xhr.onreadystatechange = function () {
+            //
+        };
+
+        //还有一些程序等待执行
+    </script>
+</body>
+</html>

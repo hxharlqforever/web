@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+
+    <script type="text/javascript">
+        function Person(name) {
+            this.name = name;//this就是代指下面的对象p1
+        }
+        //在Person的原型对象中加一个sayHello方法
+        Person.prototype.sayHello = function () {
+            alert('大家好，我叫' + this.name + '今年' + this.age + '岁了' + '我喜欢' + this.friends);
+        }
+        Person.prototype.age = 24;
+        Person.prototype.sex = '男';
+        Person.prototype.friends = ['甄姬','大乔','小乔'];
+        this.sayHi = function () {
+            alert('Hi');
+        }
+
+        var p1 = new Person('曹操');
+        p1.age = '36';
+        p1.friends[0] = '貂蝉';//原型对象是只读的，这里改的并不是原型对象，而是通过原型对象改变了某些内存
+        p1.sayHello();
+
+        var p2 = new Person('诸葛亮');
+        p2.sayHello();
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

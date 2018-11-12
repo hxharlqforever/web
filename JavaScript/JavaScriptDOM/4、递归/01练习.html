@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+       
+    </style>
+    <script type="text/javascript">
+       
+
+        //----------------------------------------------------------------点击不同行不同动作
+        window.onload = function () {
+
+            //全选
+            var chks = document.getElementById('btnAll').onclick = function () {
+
+                //获取u1下的所有行
+                var chks = document.getElementById('u1').getElementsByTagName('input');
+                //遍历每个行，设置每个checkbox为选中状态
+                for (var i = 0; i < chks.length; i++) {
+                  
+                    chks[i].checked = true;
+
+
+                }
+            };
+
+            //全不选
+            var chks = document.getElementById('btnNotAll').onclick = function () {
+
+                //获取u1下的所有行
+                var chks = document.getElementById('u1').getElementsByTagName('input');
+                //遍历每个行，设置每个checkbox为不选中状态
+                for (var i = 0; i < chks.length; i++) {
+
+                    chks[i].checked = false;
+
+
+                }
+            };
+
+            //反选
+            var chks = document.getElementById('btnRev').onclick = function () {
+
+                //获取u1下的所有行
+                var chks = document.getElementById('u1').getElementsByTagName('input');
+                //遍历每个行，设置每个checkbox为不选中状态
+                for (var i = 0; i < chks.length; i++) {
+
+                    chks[i].checked =!chks[i].checked;
+
+                }
+            };
+          
+        };
+
+        
+      
+    </script>
+
+</head>
+<body>
+    <ul id="u1">
+        <li><input type="checkbox" name="name" value=""/>爱情买卖</li>
+        <li><input type="checkbox" name="name" value=""/>最炫民族风</li>
+        <li><input type="checkbox" name="name" value=""/>江南style</li>
+        <li><input type="checkbox" name="name" value=""/>河图</li>
+    </ul>
+
+
+
+    <input type="button" name="name" value="全选" id="btnAll" />
+    <input type="button" name="name" value="全不选" id="btnNotAll"/>
+    <input type="button" name="name" value="反选" id="btnRev" />
+   <p>-----------------------------</p>
+   
+  
+
+</body>
+</html>

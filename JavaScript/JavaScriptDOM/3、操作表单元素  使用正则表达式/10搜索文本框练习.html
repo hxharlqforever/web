@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+        .cls {
+        color:gray;/*设置前景色，字体为灰色*/
+        }
+        </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            //文本框获得焦点事件
+            document.getElementById('res').onfocus = function () {
+                //判断当前文库框的文字是否是  ‘请输入搜索关键字’
+                //判断是否应用了cls类样式
+                if (this.value == '请输入搜索关键字' && this.className == 'cls') {
+                    this.value = '';//清空文本框
+                    this.className = '';//清空类样式
+                }
+            };
+            //为文本框注册一个时区焦点事件
+            document.getElementById('res').onblur = function () {
+                //判断文本框的内容是否为空，如果为空，则将文本框的状态恢复到默认
+                if(this.value.length==0){
+                    this.value = '请输入搜索关键字';
+                    this.className = 'cls';
+                }
+            };
+        };
+    </script>
+</head>
+<body>
+    <input class="cls" id="res" value="请输入搜索关键字"/>
+
+</body>
+</html>

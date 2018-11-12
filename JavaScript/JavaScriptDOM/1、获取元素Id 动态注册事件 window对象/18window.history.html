@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script type="text/javascript">
+
+        window.onload = function () {
+
+            document.getElementById('btn1').onclick = function (evt) {
+                window.history.back();//后退
+         
+
+            }
+            document.getElementById('btn2').onclick = function (evt) {
+               
+                window.history.forward();//前进
+
+            }
+
+
+        }
+        
+      
+    </script>
+
+</head>
+<body>
+    <input type="button" name="name" value="后退" id="btn1" />
+    <input type="button" name="name" value="前进" id="btn2" />
+    <a href="">content</a>
+</body>
+</html>

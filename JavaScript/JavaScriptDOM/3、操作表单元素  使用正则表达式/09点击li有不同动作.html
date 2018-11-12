@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+       
+    </style>
+    <script type="text/javascript">
+        var datas = {
+            "山东": ["青岛", "济南", "烟台"],
+            "山西": ["大同", "太原", "运城"],
+            "广东": ["汕头", "东莞", "广州"],
+        };
+
+        //----------------------------------------------------------------点击不同行不同动作
+        window.onload = function () {
+
+            setTimeTop();
+            //获取u1下的所有行
+            var lis = document.getElementById('u1').getElementsByTagName('li');
+            //遍历每个行
+            for (var i = 0; i < lis.length; i++) {
+                //鼠标的mouseover事件
+                lis[i].onmouseover = function () {
+                    this.style.backgroundColor = 'red';
+                };
+
+                //鼠标离开事件
+                lis[i].onmouseout = function () {
+                    this.style.backgroundColor = '';
+                };
+
+                //点击事件
+                lis[i].onclick = function () {
+                    //把所有的li中的文字变成默认大小
+                    for (var j = 0; j < length; j++) {
+                        lis[j].style.fontSize = '';
+
+                    }
+                    //改变字体大小
+                    this.style.fontSize = '30px';
+                };
+            }
+        };
+
+        //----------------------------------设置时间
+        //启动一个计时器
+        setInterval(setTimeTop, 1000);//这里只要函数名
+
+
+        function setTimeTop() {
+            //1、获取当前时间
+            var nowDate = new Date();
+            //2、设置当前事件到p标签中
+            document.getElementById('p1').innerHTML=nowDate.toLocaleDateString()+' ,'+nowDate.toLocaleTimeString();
+        }
+      
+    </script>
+
+</head>
+<body>
+    <ul id="u1">
+        <li><input type="checkbox" name="name" value=""/>爱情买卖</li>
+        <li><input type="checkbox" name="name" value=""/>最炫民族风</li>
+        <li><input type="checkbox" name="name" value=""/>江南style</li>
+        <li><input type="checkbox" name="name" value=""/>河图</li>
+    </ul>
+
+    <p id="p1">
+        <!--‎2018‎年‎6‎月‎8‎日‎‎23:07:45-->
+    </p>
+
+    <input type="button" name="name" value="全选" />
+    <input type="button" name="name" value="全不选" />
+    <input type="button" name="name" value="反选" />
+   <p>-----------------------------</p>
+   
+    省：
+    <select>
+
+    </select>
+    市：
+    <select></select>
+    <p>-----------------------------</p>
+    <select multiple="">
+        <option value="value">增加</option>
+        <option value="value">删除</option>
+        <option value="value">修改</option>
+        <option value="value">查询</option>
+        <option value="value">保存</option>
+    </select >
+    <input type="button" name="name" value=">>" />
+    <input type="button" name="name" value=">" />
+    <input type="button" name="name" value="<" />
+    <input type="button" name="name" value="<<" />
+    <select>
+      
+    </select>
+
+</body>
+</html>

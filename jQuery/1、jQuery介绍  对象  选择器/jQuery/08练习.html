@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <script>
+        $(function () {
+
+            $('#one li').mouseover(function () {//
+                $(this).css('backgroundColor', 'red').siblings().css('color', 'green');
+
+            }).click(function () {
+                //单击事件
+                $(this).prevAll().css('backgroundColor','yellow').end().nextAll().css('backgroundColor','blue');
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul id="one">
+        <li>公牛</li>
+
+        <li>小妞</li>
+
+        <li>神琳琅</li>
+
+        <li>开拓者</li>
+
+    </ul>
+
+</body>
+</html>

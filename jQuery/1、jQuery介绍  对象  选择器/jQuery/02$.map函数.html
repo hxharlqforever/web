@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="scripts/jquery-3.3.1.js"></script>
+    <script>
+        var arrInt = [10, 20, 30, 40, 50, 60, 70, 80];
+
+        ////遍历数组中的每个元素，返回一个新的数组，键值对同数组
+
+        //var arrNew = $.map(arrInt, function (x, y, z) {
+        //    //alert(arguments.length);//判断是否传入参数
+        //    //alert(x+','+y+','+z);//判断传入的参数是什么
+        //    return x*2;
+        //});
+        //alert(arrNew);
+
+        //遍历数组，把索引大于3 的翻倍，并返回一个新的数组
+        //var arrNew = $.map(arrInt, function (element, index) {
+        //    if (index > 3) {
+        //        return element * 2;
+        //    } else {
+        //        return element;
+        //    }
+        //});
+        //alert(arrNew);
+
+        arrNew2 = $.map(arrInt, function () {//callback即为传过来的匿名函数
+            return 100
+        });
+        alert(arrNew2);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+﻿body {
+}
+a:link {
+            font:14px 宋体;
+            color:blue;
+            text-decoration:none;
+        }
+        a:hover {
+            color:black;
+            text-decoration:underline;
+        }
+        a:active {
+            color:red;
+            text-decoration:line-through;
+        }
+        a:visited {
+            color:green;
+            font:80px 黑体; /*颜色有作用，字体不起作用，为什么？？？*/
+        }

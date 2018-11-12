@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        //var arrName = ['huangxv', 'sunjing', 'liufang', 'yinying','zhuruilin'];
+        //arrName.sort();//这个方法没有降序排序功能,按首字符升序排列
+
+        ////arrName.reverse();//排序后再降序
+
+        //alert(arrName);
+
+        var arrData = [40, 3, 4, 78765, 5, 544, 5];
+        //arrData.sort();//当成字符串，按首个数字大写哦排序
+        //alert(arrData);
+        //按照数字大小排序
+        arrData.sort(function (x, y) { return y - x; });//按数字大小降序排列
+        arrData.sort(function (x, y) { return x - y; });//按数字大小升序排列
+
+        alert(arrData.toString());
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
